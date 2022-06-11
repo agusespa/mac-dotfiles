@@ -1,0 +1,21 @@
+{
+  "suggest.noselect": false,
+  "eslint.autoFixOnSave": true,
+  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+    "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "css",
+    "scss",
+    "xml",
+    "html",
+    "java"
+  ],
+  "tsserver.formatOnType": true,
+  "coc.preferences.formatOnType": true,
+  "java.completion.enabled": true,
+  "java.format.enabled": true,
+  "codeLens.enable": true
+}

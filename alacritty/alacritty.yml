@@ -1,0 +1,19 @@
+font:
+    # The normal (roman) font face to use.
+    normal:
+        family: "SF Mono"
+    bold:
+        family: "SF Mono"
+        style: Bold
+    italic:
+        family: "SF Mono"
+        style: Italic
+
+    # Point size of the font
+    size: 17.0
+
+colors:
+    # Default colors
+    primary:
+        background: "#0C0D0E"
+        foreground: "0xF0FDFF"
