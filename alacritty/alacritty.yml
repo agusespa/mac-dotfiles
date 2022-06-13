@@ -17,3 +17,6 @@ colors:
     primary:
         background: "#0C0D0E"
         foreground: "0xF0FDFF"
+
+mouse:
+    hide_when_typing: true
