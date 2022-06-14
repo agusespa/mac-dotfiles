@@ -13,6 +13,9 @@ set nobackup
 set encoding=utf-8
 set mouse=a
 
+set ignorecase
+set smartcase
+
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
