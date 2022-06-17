@@ -36,9 +36,8 @@ set lbr
 set signcolumn=yes
 
 
-"
-"
-" Plug-ins
+
+" Plug-ins installation
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -66,8 +65,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 call plug#end()
 
-filetype plugin on
 
+
+" Coc extensions installation
 let g:coc_global_extensions = [
             \ 'coc-json',
             \ 'coc-tsserver',
@@ -82,8 +82,7 @@ let g:coc_global_extensions = [
             \ ]
 
 
-"
-"
+
 " Appearence
 
 set background=dark
@@ -100,8 +99,7 @@ let g:airline#extensions#tabline#buffers_label = ''
 let g:airline#extensions#tabline#tabs_label = ''
 
 
-"
-"
+
 " Mappings
 
 let g:mapleader = ';'
@@ -120,8 +118,7 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> <leader>q :lclose<bar>b#<bar>bd #<CR>
 
 
-"
-"
+
 " NERDTree settings
 
 let NERDTreeShowHidden=1
