@@ -4,6 +4,7 @@ fish/
 gcloud/
 gtk-2.0/
 coc/
+gh/
 
 nvim/autoload
 nvim/plugged
