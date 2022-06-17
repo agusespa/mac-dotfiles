@@ -68,6 +68,20 @@ call plug#end()
 
 filetype plugin on
 
+let g:coc_global_extensions = [
+            \ 'coc-json',
+            \ 'coc-tsserver',
+            \ 'coc-html',
+            \ 'coc-css',
+            \ 'coc-snippets',
+            \ 'coc-prettier',
+            \ 'coc-eslint',
+            \ 'coc-cssmodules',
+            \ 'coc-xml',
+            \ 'coc-java',
+            \ ]
+
+
 "
 "
 " Appearence
