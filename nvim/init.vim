@@ -1,4 +1,5 @@
 syntax on
+set termguicolors
 set textwidth=0
 set ruler
 set number
@@ -50,6 +51,7 @@ call plug#begin('~/.config/nvim/plugged')
 	"Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'sheerun/vim-polyglot'
 	Plug 'uiiaoo/java-syntax.vim'
+	Plug 'norcalli/nvim-colorizer.lua'
 
 	" Utilities
     	Plug 'preservim/nerdtree'
@@ -64,7 +66,6 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'mlaursen/vim-react-snippets'
 
 call plug#end()
-
 
 
 " Coc extensions installation
@@ -90,6 +91,8 @@ set background=dark
 "colorscheme gruvbox
 colorscheme nord
 let g:NERDTreeWinSize=30
+
+lua require'colorizer'.setup()
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
