@@ -9,3 +9,4 @@ gh/
 nvim/plugged
 
 *.DS_Store
+nvim/autoload/plug.vim
