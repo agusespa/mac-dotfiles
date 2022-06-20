@@ -1,3 +1,5 @@
+startup_mode: Fullscreen
+
 font:
     # The normal (roman) font face to use.
     normal:
@@ -64,3 +66,4 @@ colors:
 
 mouse:
     hide_when_typing: true
+

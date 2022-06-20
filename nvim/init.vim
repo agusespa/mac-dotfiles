@@ -107,7 +107,7 @@ let g:airline#extensions#tabline#tabs_label = ''
 "
 " esc in insert & visual mode
 inoremap kj <esc>
-vnoremap kj <esc>
+"vnoremap kj <esc>
 
 let g:mapleader = ';'
 nnoremap <leader>f <cmd>Telescope find_files<cr>
