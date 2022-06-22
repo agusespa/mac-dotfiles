@@ -109,7 +109,7 @@ let g:airline#extensions#tabline#tabs_label = ''
 inoremap kj <esc>
 "vnoremap kj <esc>
 
-let g:mapleader = ';'
+let g:mapleader = "'"
 nnoremap <leader>f <cmd>Telescope find_files<cr>
 nnoremap <leader>n :NERDTreeFocus<CR>
 let g:NERDCreateDefaultMappings = 1
