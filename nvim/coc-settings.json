@@ -11,7 +11,8 @@
     "scss",
     "xml",
     "html",
-    "java"
+    "java",
+    "py"
   ],
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
