@@ -18,5 +18,5 @@
   "coc.preferences.formatOnType": true,
   "java.completion.enabled": true,
   "java.format.enabled": true,
-  "codeLens.enable": true
+  "codeLens.enable": false
 }
