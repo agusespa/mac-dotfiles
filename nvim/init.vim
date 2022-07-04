@@ -80,7 +80,8 @@ let g:coc_global_extensions = [
             \ 'coc-cssmodules',
             \ 'coc-xml',
             \ 'coc-java',
-\ 'coc-pyright',
+\ 'coc-pyright'
+"\ 'coc-typos',
             \ ]
 
 
