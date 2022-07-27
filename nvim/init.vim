@@ -132,7 +132,7 @@ nnoremap <silent> <leader>q :lclose<bar>b#<bar>bd #<CR>
 
 let NERDTreeShowHidden=1
 "autocmd VimEnter * NERDTree
-let g:NERDTreeIgnore = ['^target$', '^.settings$', '^node_modules$', '^build$', '^.git$', '^.DS_Store$']
+let g:NERDTreeIgnore = ['^target$', '^.settings$', '^node_modules$', '^build$', '^.git$', '^.DS_Store$', '\.class$']
 
 " sync open file with NERDTree
 function! IsNERDTreeOpen()        
