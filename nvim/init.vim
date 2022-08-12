@@ -126,7 +126,9 @@ nmap <silent> gr <Plug>(coc-references)
 " delete buffer without closing window
 nnoremap <silent> <leader>q :lclose<bar>b#<bar>bd #<CR>
 
-
+" COC autocomplete on enter
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " NERDTree settings
 
