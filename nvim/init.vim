@@ -134,7 +134,7 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 let NERDTreeShowHidden=1
 "autocmd VimEnter * NERDTree
-let g:NERDTreeIgnore = ['^target$', '^.settings$', '^node_modules$', '^build$', '^.git$', '^.DS_Store$', '\.class$']
+let g:NERDTreeIgnore = ['^target$', '^.settings$', '^.idea$', '^node_modules$', '^build$', '^.git$', '^.DS_Store$', '\.class$']
 
 " sync open file with NERDTree
 function! IsNERDTreeOpen()        
