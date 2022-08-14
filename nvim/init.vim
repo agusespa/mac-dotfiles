@@ -70,19 +70,22 @@ call plug#end()
 
 " Coc extensions installation
 let g:coc_global_extensions = [
-            \ 'coc-json',
-            \ 'coc-tsserver',
-            \ 'coc-html',
-            \ 'coc-css',
-            \ 'coc-snippets',
-            \ 'coc-prettier',
-            \ 'coc-eslint',
-            \ 'coc-cssmodules',
-            \ 'coc-xml',
-            \ 'coc-java',
-\ 'coc-pyright'
-"\ 'coc-typos',
-            \ ]
+	\ 'coc-json',
+	\ 'coc-tsserver',
+	\ 'coc-html',
+	\ 'coc-css',
+	\ 'coc-snippets',
+	\ 'coc-prettier',
+	\ 'coc-eslint',
+	\ 'coc-cssmodules',
+	\ 'coc-xml',
+	\ 'coc-java',
+	\ 'coc-pyright',
+	\ 'coc-docker',
+	\ 'coc-emmet',
+	\ 'coc-spell-checker',
+	\ 'coc-markdownlint'
+	\ ]
 
 
 
