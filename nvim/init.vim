@@ -49,7 +49,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 	" Syntax
 	Plug 'pangloss/vim-javascript'
-	Plug 'elzr/vim-json'
 	Plug 'maxmellon/vim-jsx-pretty'
 	Plug 'cakebaker/scss-syntax.vim'
 	Plug 'norcalli/nvim-colorizer.lua'
@@ -87,14 +86,11 @@ let g:coc_global_extensions = [
 
 
 " Appearence
-
 set background=dark
 colorscheme one
 let g:NERDTreeWinSize=30
 let g:airline_theme='one'
 let g:one_allow_italics = 1
-call one#highlight('bg', '', '000000', 'none')
-
 lua require'colorizer'.setup()
 
 " Airline
