@@ -43,7 +43,7 @@ set signcolumn=yes
 call plug#begin('~/.config/nvim/plugged')
 
 	" Appearance
-	Plug 'doums/darcula'
+	Plug 'agusespa/nvim-one'
 	Plug 'vim-airline/vim-airline'
 	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 	Plug 'sheerun/vim-polyglot'
@@ -67,8 +67,11 @@ call plug#end()
 " Appearence
 
 set background=dark
-colorscheme darcula
+colorscheme one
 let g:NERDTreeWinSize=30
+let g:airline_theme='one'
+let g:one_allow_italics = 1
+call one#highlight('bg', '', '000000', 'none')
 
 lua require'colorizer'.setup()
 
