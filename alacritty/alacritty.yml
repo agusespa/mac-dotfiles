@@ -17,7 +17,7 @@ font:
 
 colors:
   primary:
-    background: "#0C0D0E"
+    background: "#000000"
     foreground: "0xF0FDFF"
     dim_foreground: '#a5abb6'
   cursor:
