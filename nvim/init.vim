@@ -112,6 +112,7 @@ let g:mapleader = "'"
 nnoremap <leader>f <cmd>Telescope find_files<cr>
 nnoremap <leader>n :NERDTreeFocus<CR>
 let g:NERDCreateDefaultMappings = 1
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 
 " Buffers & Windows
