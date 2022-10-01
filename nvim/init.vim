@@ -46,22 +46,44 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'agusespa/nvim-one'
 	Plug 'vim-airline/vim-airline'
 	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-	Plug 'sheerun/vim-polyglot'
-	Plug 'uiiaoo/java-syntax.vim'
+
+	" Syntax
+	Plug 'pangloss/vim-javascript'
+	Plug 'elzr/vim-json'
+	Plug 'maxmellon/vim-jsx-pretty'
+	Plug 'cakebaker/scss-syntax.vim'
 	Plug 'norcalli/nvim-colorizer.lua'
 
 	" Utilities
     	Plug 'preservim/nerdtree'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
-	Plug 'pangloss/vim-javascript'
-	Plug 'maxmellon/vim-jsx-pretty'
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'preservim/nerdcommenter'
 	Plug 'SirVer/ultisnips'
+	
+	" LSPs
+	"Plug 'mattn/emmet-vim'
 	Plug 'mlaursen/vim-react-snippets'
 
 call plug#end()
 
+
+" Coc extensions installation
+let g:coc_global_extensions = [
+	\ 'coc-json',
+	\ 'coc-tsserver',
+	\ 'coc-html',
+	\ 'coc-css',
+	\ 'coc-snippets',
+	\ 'coc-prettier',
+	\ 'coc-eslint',
+	\ 'coc-cssmodules',
+	\ 'coc-xml',
+	\ 'coc-emmet',
+	\ 'coc-spell-checker',
+	\ 'coc-markdownlint'
+	\ ]
 
 
 " Appearence
