@@ -14,5 +14,5 @@
   ],
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
-  "codeLens.enable": true
+  "codeLens.enable": false
 }
