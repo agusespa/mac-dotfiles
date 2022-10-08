@@ -45,13 +45,11 @@ call plug#begin('~/.config/nvim/plugged')
 	" Appearance
 	Plug 'agusespa/nvim-one'
 	Plug 'vim-airline/vim-airline'
-	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 	" Syntax
 	Plug 'pangloss/vim-javascript'
 	Plug 'maxmellon/vim-jsx-pretty'
 	Plug 'cakebaker/scss-syntax.vim'
-	Plug 'norcalli/nvim-colorizer.lua'
 
 	" Utilities
     	Plug 'preservim/nerdtree'
@@ -59,11 +57,6 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'nvim-telescope/telescope.nvim'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'preservim/nerdcommenter'
-	Plug 'SirVer/ultisnips'
-	
-	" LSPs
-	"Plug 'mattn/emmet-vim'
-	Plug 'mlaursen/vim-react-snippets'
 
 call plug#end()
 
@@ -91,7 +84,6 @@ colorscheme one
 let g:NERDTreeWinSize=30
 let g:airline_theme='one'
 let g:one_allow_italics = 1
-lua require'colorizer'.setup()
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
@@ -125,8 +117,3 @@ nnoremap <silent> <leader>q :lclose<bar>b#<bar>bd #<CR>
 let NERDTreeShowHidden=1
 "autocmd VimEnter * NERDTree
 let g:NERDTreeIgnore = ['^target$', '^.settings$', '^.idea$', '^node_modules$', '^build$', '^.git$', '^.DS_Store$', '\.class$']
-
-" sync open file with NERDTree
-function! IsNERDTreeOpen()        
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
