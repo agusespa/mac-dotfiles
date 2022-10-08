@@ -36,6 +36,9 @@ set lbr
 
 set signcolumn=yes
 
+"remove tilde from gutter unused lines
+set fillchars=eob:\ ,fold:\ ,vert:\│
+
 
 
 " Plug-ins installation
@@ -116,4 +119,4 @@ nnoremap <silent> <leader>q :lclose<bar>b#<bar>bd #<CR>
 
 let NERDTreeShowHidden=1
 "autocmd VimEnter * NERDTree
-let g:NERDTreeIgnore = ['^target$', '^.settings$', '^.idea$', '^node_modules$', '^build$', '^.git$', '^.DS_Store$', '\.class$']
+let g:NERDTreeIgnore = ['^target$', '^.settings$', '^.idea$', '^node_modules$', '^build$', '^.git$', '^.DS_Store$', '\.class$', '\.angular$']
