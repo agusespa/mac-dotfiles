@@ -12,9 +12,11 @@ nvim/autoload
 
 nvim/autoload/plug.vim
 nvim/plugged/
+nvim/plugin/
 
 nvim/plugged/nord-vim/autoload
 nvim/plugged/nord-vim/changelog.md
 nvim/plugged/nord-vim/readme.md
 nvim/plugged/nord-vim/license
 memos.json
+package-lock.json

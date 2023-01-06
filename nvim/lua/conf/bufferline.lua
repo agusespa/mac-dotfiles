@@ -1,0 +1,139 @@
+require("bufferline").setup{
+  options = {
+	mode = "buffers",
+    numbers = "buffer_id",
+    modified_icon = "+",
+    diagnostics = "nvim_lsp",
+    max_name_length = 12,
+    truncate_names = true,
+    tab_size = 14,
+    indicator = { style = 'none' },
+    separator_style = "thin",
+    -- sort_by = 'relative_directory',
+  },
+        -- highlights = {
+        --     fill = {
+        --         bg = '#282828',
+        --         fg = '#a89984',
+        --     },
+        --     background = {
+        --         bg = '#282828',
+        --         fg = '#a89984',
+        --     },
+        --     close_button = {
+        --         bg = '#282828',
+        --     },
+        --     close_button_visible = {
+        --         bg = '#282828',
+        --     },
+        --     close_button_selected = {
+        --         bg = '#3c3836',
+        --     },
+        --     buffer_visible = {
+        --         bg = '#282828',
+        --         fg = '#a89984',
+        --     },
+        --     buffer_selected = {
+        --         bg = '#3c3836',
+        --     },
+        --     numbers = {
+        --         bg = '#282828',
+        --         fg = '#a89984',
+        --     },
+        --     numbers_visible = {
+        --         bg = '#282828',
+        --         fg = '#a89984',
+        --     },
+        --     numbers_selected = {
+        --         bg = '#3c3836',
+        --     },
+        --     diagnostic = {
+        --         bg = '#282828',
+        --     },
+        --     diagnostic_visible = {
+        --         bg = '#282828',
+        --     },
+        --     diagnostic_selected = {
+        --         bg = '#3c3836',
+        --     },
+        --     warning = {
+        --         bg = '#282828',
+        --     },
+        --     warning_visible = {
+        --         bg = '#282828',
+        --     },
+        --     warning_selected = {
+        --         bg = '#3c3836',
+        --     },
+        --     error = {
+        --         bg = '#282828',
+        --     },
+        --     error_visible = {
+        --         bg = '#282828',
+        --     },
+        --     error_selected = {
+        --         bg = '#3c3836',
+        --     },
+        --     hint_diagnostic = {
+        --         bg = '#282828',
+        --         fg = '#a89984',
+        --     },
+        --     hint_diagnostic_visible = {
+        --         bg = '#282828',
+        --         fg = '#a89984',
+        --     },
+        --     hint_diagnostic_selected = {
+        --         bg = '#3c3836',
+        --     },
+        --     hint = {
+        --         bg = '#282828',
+        --         fg = '#a89984',
+        --     },
+        --     hint_visible = {
+        --         bg = '#282828',
+        --         fg = '#a89984',
+        --     },
+        --     hint_selected = {
+        --         bg = '#3c3836',
+        --         fg = '#8ec07c'
+        --     },
+        --     info = {
+        --         bg = '#282828',
+        --         fg = '#a89984',
+        --     },
+        --     info_visible = {
+        --         bg = '#282828',
+        --         fg = '#a89984',
+        --     },
+        --     info_selected = {
+        --         bg = '#3c3836',
+        --     },
+        --     separator_selected = {
+        --         bg = '#3c3836',
+        --         fg = '#fbf1c7',
+        --     },
+        --     separator_visible = {
+        --         bg = '#282828',
+        --         fg = '#cc241d',
+        --     },
+        --     separator = {
+        --         bg = '#282828',
+        --         fg = '#a89984',
+        --     },
+        --     indicator_selected = {
+        --         bg = '#665c54',
+        --     },
+        --     modified = {
+        --         bg = '#282828',
+        --     },
+        --     modified_visible = {
+        --         bg = '#282828',
+        --     },
+        --     modified_selected = {
+        --         bg = '#3c3836',
+        --     },
+        --     offset_separator = {
+        --         bg = '#282828',
+        --     },
+        -- }
+}
