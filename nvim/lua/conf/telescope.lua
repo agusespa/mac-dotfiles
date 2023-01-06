@@ -30,7 +30,6 @@ vim.keymap.set('n', '<leader>f', ":Telescope find_files hidden=true<CR>", { nore
 vim.keymap.set('n', '<leader>g', builtin.live_grep, { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>b', builtin.buffers, { noremap = true, silent = true })
 vim.keymap.set("n", '<leader>n', ":Telescope file_browser path=%:p:h hidden=true<CR>", { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>d', ':Telescope diagnostics<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<leader>g', 'y<ESC>:Telescope live_grep default_text=<c-r>0<CR>', default_opts)
 
 -- harpoon
