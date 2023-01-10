@@ -1,7 +1,7 @@
 require("bufferline").setup{
   options = {
 	mode = "buffers",
-    numbers = "buffer_id",
+    -- numbers = "buffer_id",
     modified_icon = "+",
     diagnostics = "nvim_lsp",
     max_name_length = 12,

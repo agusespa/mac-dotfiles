@@ -19,6 +19,7 @@ require("telescope").setup {
             width = 0.9,
             preview_width = 0.5,
         },
+        -- path_display={"tail"},
         path_display={"smart"},
         file_ignore_patterns = { "node_modules" }
     },
