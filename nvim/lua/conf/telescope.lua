@@ -6,7 +6,8 @@ require("telescope").setup {
           initial_mode = "normal"
         },
         lsp_references = {
-          initial_mode = "normal"
+          initial_mode = "normal",
+          show_line = false,
         },
         diagnostics = {
           initial_mode = "normal"
@@ -24,7 +25,7 @@ require("telescope").setup {
         },
         -- path_display={"tail"},
         path_display={"smart"},
-        file_ignore_patterns = { "node_modules" }
+        file_ignore_patterns = { "node_modules" },
     },
 }
 
