@@ -11,6 +11,9 @@ require("telescope").setup {
         diagnostics = {
           initial_mode = "normal"
         },
+        git_status = {
+          initial_mode = "normal"
+        },
         find_files = {
         }
     },
@@ -32,6 +35,7 @@ vim.keymap.set('n', '<leader>g', builtin.live_grep, { noremap = true, silent = t
 vim.keymap.set('n', '<leader>b', builtin.buffers, { noremap = true, silent = true })
 vim.keymap.set("n", '<leader>n', ":Telescope file_browser path=%:p:h hidden=true<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<leader>g', 'y<ESC>:Telescope live_grep default_text=<c-r>0<CR>', default_opts)
+vim.keymap.set('n', '<leader>c', builtin.git_status, { noremap = true, silent = true })
 
 -- harpoon
 require("harpoon").setup({
