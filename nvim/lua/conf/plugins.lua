@@ -45,6 +45,7 @@ require('packer').startup(function(use)
     }
     use 'numToStr/Comment.nvim'
     use 'prettier/vim-prettier'
+    use 'tpope/vim-fugitive'
     use 'mbbill/undotree'
     use {
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
