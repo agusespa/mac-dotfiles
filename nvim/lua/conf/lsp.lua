@@ -1,12 +1,28 @@
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
-lsp.setup()
+
+lsp.set_preferences({
+  sign_icons = {
+    error = 'E',
+    warn = 'W',
+    hint = 'H',
+    info = 'I'
+  }
+})
+
 lsp.setup_nvim_cmp({
     preselect = 'none',
     completion = {
         completeopt = 'menu,menuone,noinsert,noselect'
     },
+    sources = {
+        {name = 'path'},
+        {name = 'nvim_lsp', keyword_length = 3},
+        {name = 'buffer', keyword_length = 3},
+        {name = 'luasnip', keyword_length = 2},
+    }
 })
+
 lsp.setup()
 
 vim.keymap.set("n", 'ca', vim.lsp.buf.code_action, { buffer = bufnr })

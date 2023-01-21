@@ -57,28 +57,6 @@ vim.opt.spelloptions = "camel"
 vim.o.completeopt = 'menuone,noselect'
 
 --  Appearence
-require("gruvbox").setup({
-  undercurl = true,
-  underline = true,
-  bold = false,
-  italic = true,
-  strikethrough = true,
-  invert_selection = false,
-  invert_signs = false,
-  invert_tabline = false,
-  invert_intend_guides = false,
-  inverse = true, -- invert background for search, diffs, statuslines and errors
-  contrast = "", -- can be "hard", "soft" or empty string
-  palette_overrides = {},
-  overrides = {
-        -- SignColumn = { bg = "#282828" },
-        -- LineNr = { bg = "#1a1a1a" },
-        ColorColumn = { bg = "#1a1a1a" },
-  },
-  dim_inactive = false,
-  transparent_mode = true,
-})
-
 require('onedark').setup {
     style = 'warm',
     transparent = true,
@@ -91,3 +69,26 @@ require('onedark').load()
 vim.cmd("colorscheme onedark")
 
 require('Comment').setup()
+
+
+-- require("gruvbox").setup({
+--   undercurl = true,
+--   underline = true,
+--   bold = false,
+--   italic = true,
+--   strikethrough = true,
+--   invert_selection = false,
+--   invert_signs = false,
+--   invert_tabline = false,
+--   invert_intend_guides = false,
+--   inverse = true, -- invert background for search, diffs, statuslines and errors
+--   contrast = "", -- can be "hard", "soft" or empty string
+--   palette_overrides = {},
+--   overrides = {
+--         -- SignColumn = { bg = "#282828" },
+--         -- LineNr = { bg = "#1a1a1a" },
+--         ColorColumn = { bg = "#1a1a1a" },
+--   },
+--   dim_inactive = false,
+--   transparent_mode = true,
+-- })
