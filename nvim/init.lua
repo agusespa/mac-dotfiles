@@ -58,8 +58,11 @@ vim.o.completeopt = 'menuone,noselect'
 
 --  Appearence
 require('onedark').setup {
-    style = 'warm',
+    style = 'warmer',
     transparent = true,
+    colors = {
+        fg = "#f0f0f0"
+    },
     highlights = {
         ColorColumn = { bg = "#1a1a1a" },
     }
