@@ -55,6 +55,6 @@ require('packer').startup(function(use)
     use 'ThePrimeagen/harpoon'
 
     -- Appearence plugins
-    use 'navarasu/onedark.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
 
 end)

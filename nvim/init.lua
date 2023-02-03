@@ -57,41 +57,45 @@ vim.opt.spelloptions = "camel"
 vim.o.completeopt = 'menuone,noselect'
 
 --  Appearence
-require('onedark').setup {
-    style = 'warmer',
-    transparent = true,
-    colors = {
-        fg = "#f0f0f0"
+require("catppuccin").setup({
+    flavour = "mocha", 
+    transparent_background = true,
+    show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+    term_colors = false,
+    dim_inactive = {
+        enabled = false,
+        shade = "dark",
+        percentage = 0.15,
     },
-    highlights = {
-        ColorColumn = { bg = "#1a1a1a" },
-    }
-}
-require('onedark').load()
+    no_italic = false, -- Force no italic
+    no_bold = false, -- Force no bold
+    styles = {
+        comments = { "italic" },
+        conditionals = { "italic" },
+        loops = {},
+        functions = {},
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+        operators = {},
+    },
+    color_overrides = {},
+    custom_highlights = {},
+    integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        telescope = true,
+        harpoon = true,
+        treesitter = true,
+    },
+})
 
-vim.cmd("colorscheme onedark")
+vim.cmd("colorscheme catppuccin")
 
 require('Comment').setup()
 
-
--- require("gruvbox").setup({
---   undercurl = true,
---   underline = true,
---   bold = false,
---   italic = true,
---   strikethrough = true,
---   invert_selection = false,
---   invert_signs = false,
---   invert_tabline = false,
---   invert_intend_guides = false,
---   inverse = true, -- invert background for search, diffs, statuslines and errors
---   contrast = "", -- can be "hard", "soft" or empty string
---   palette_overrides = {},
---   overrides = {
---         -- SignColumn = { bg = "#282828" },
---         -- LineNr = { bg = "#1a1a1a" },
---         ColorColumn = { bg = "#1a1a1a" },
---   },
---   dim_inactive = false,
---   transparent_mode = true,
--- })

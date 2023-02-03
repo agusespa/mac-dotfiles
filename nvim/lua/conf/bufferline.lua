@@ -4,6 +4,7 @@ require("bufferline").setup{
     -- numbers = "buffer_id",
     modified_icon = "+",
     buffer_close_icon = '',
+    close_icon = '',
     diagnostics = "nvim_lsp",
     max_name_length = 12,
     truncate_names = true,
