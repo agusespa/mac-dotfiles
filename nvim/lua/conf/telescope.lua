@@ -15,6 +15,11 @@ require("telescope").setup {
         git_status = {
           initial_mode = "normal"
         },
+        live_grep = {
+            additional_args = function(opts)
+                return {"--hidden"}
+            end
+        },
         find_files = {
         }
     },
