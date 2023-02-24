@@ -23,6 +23,10 @@ lsp.setup_nvim_cmp({
     }
 })
 
+lsp.configure('stylelint_lsp', {
+    filetypes = { "css", "scss" },
+})
+
 lsp.setup()
 
 vim.keymap.set("n", 'ca', vim.lsp.buf.code_action, { buffer = bufnr })
