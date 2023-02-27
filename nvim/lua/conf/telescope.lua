@@ -24,9 +24,11 @@ require("telescope").setup {
         }
     },
     defaults = {
+        layout_strategy = 'horizontal',
         layout_config = {
-            width = 0.9,
-            preview_width = 0.5,
+            width = 0.99,
+            preview_width = 0.55,
+            preview_cutoff = 0.5,
         },
         -- path_display={"tail"},
         path_display={"smart"},
