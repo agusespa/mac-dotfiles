@@ -43,6 +43,7 @@ require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter-textobjects',
         after = 'nvim-treesitter',
     }
+    use "lukas-reineke/indent-blankline.nvim"
     use 'numToStr/Comment.nvim'
     use 'prettier/vim-prettier'
     use 'tpope/vim-fugitive'

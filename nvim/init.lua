@@ -99,3 +99,6 @@ vim.cmd("colorscheme catppuccin")
 
 require('Comment').setup()
 
+require("indent_blankline").setup {
+    indent_blankline_use_treesitter = true
+}
