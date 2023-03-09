@@ -100,5 +100,6 @@ vim.cmd("colorscheme catppuccin")
 require('Comment').setup()
 
 require("indent_blankline").setup {
-    indent_blankline_use_treesitter = true
+    indent_blankline_use_treesitter = true,
+    indent_blankline_show_first_indent_level = false,
 }
