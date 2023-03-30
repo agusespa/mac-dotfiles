@@ -48,6 +48,7 @@ require('packer').startup(function(use)
     use 'prettier/vim-prettier'
     use 'tpope/vim-fugitive'
     use 'mbbill/undotree'
+    use 'tpope/vim-sleuth'
     use {
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
       requires = { {'nvim-lua/plenary.nvim'} }
