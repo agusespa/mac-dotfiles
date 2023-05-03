@@ -4,6 +4,7 @@ require("conf.telescope")
 require("conf.lsp")
 require("conf.lualine")
 require("conf.bufferline")
+require("conf.testing")
 
 vim.opt.termguicolors = true
 
