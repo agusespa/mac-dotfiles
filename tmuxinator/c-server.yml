@@ -1,5 +1,5 @@
-name: csuit
-root: ~/Programming/csuit/
+name: c-serv
+root: ~/Programming/learn/networking/c-server/
 
 windows:
   - editor:
