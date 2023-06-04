@@ -47,6 +47,7 @@ require('packer').startup(function(use)
     use "lukas-reineke/indent-blankline.nvim"
     use 'numToStr/Comment.nvim'
     use 'prettier/vim-prettier'
+    use 'rhysd/vim-clang-format'
     use 'tpope/vim-fugitive'
     use 'mbbill/undotree'
     use 'tpope/vim-sleuth'

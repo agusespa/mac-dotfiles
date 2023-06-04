@@ -7,4 +7,6 @@ vim.keymap.set("n", "<leader>s", ":update<CR>", { noremap = true, silent = true 
 
 vim.keymap.set("n", "<leader>e", ":Explore<CR>", { noremap = true, silent = true })
 
+vim.keymap.set("n", "<leader>o", ":ClangFormat<CR>", { noremap = true, silent = true })
+
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
