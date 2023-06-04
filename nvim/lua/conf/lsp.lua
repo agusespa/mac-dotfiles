@@ -23,7 +23,7 @@ lsp.setup_nvim_cmp({
     }
 })
 
-lsp.configure('stylelint', {
+lsp.configure('stylelint_lsp', {
     filetypes = { "css", "scss" },
 })
 
