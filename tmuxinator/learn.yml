@@ -1,5 +1,5 @@
-name: c-server
-root: ~/Programming/learn/networking/c-server/
+name: learn
+root: ~/Programming/learn/
 
 windows:
   - editor:
