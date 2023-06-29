@@ -1,49 +1,13 @@
-local lsp = require('lsp-zero')
-lsp.preset('recommended')
+-- Setup language servers
+local lspconfig = require('lspconfig')
+lspconfig.tsserver.setup{}
+-- lspconfig.angularls.setup{}
 
-lsp.set_preferences({
-  sign_icons = {
-    error = 'E',
-    warn = 'W',
-    hint = 'H',
-    info = 'I'
-  }
-})
-
-lsp.setup_nvim_cmp({
-    preselect = 'none',
-    completion = {
-        completeopt = 'menu,menuone,noinsert,noselect'
-    },
-    sources = {
-        {name = 'path'},
-        {name = 'nvim_lsp', keyword_length = 3},
-        {name = 'buffer', keyword_length = 3},
-        {name = 'luasnip', keyword_length = 2},
-    }
-})
-
-lsp.configure('stylelint_lsp', {
-    filetypes = { "css", "scss" },
-})
-
-lsp.setup()
-
-vim.keymap.set("n", 'ca', vim.lsp.buf.code_action, { buffer = bufnr })
-vim.keymap.set("n", 'gd', vim.lsp.buf.definition, { buffer = bufnr })
-vim.keymap.set("n", '<leader>r', require('telescope.builtin').lsp_references, { buffer = bufnr })
-vim.keymap.set("n", '<leader>t', vim.lsp.buf.type_definition, { buffer = bufnr })
-vim.keymap.set('n', '<leader>d', ':Telescope diagnostics<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", 'gI', vim.lsp.buf.implementation, { buffer = bufnr })
-vim.keymap.set("n", '<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, { buffer = bufnr })
-vim.keymap.set("n", 'K', vim.lsp.buf.hover)
-vim.keymap.set('n', 'gl', vim.diagnostic.open_float)
 
 require('nvim-treesitter.configs').setup {
   ensure_installed = { 'lua', 'python', 'java', 'typescript', 'tsx', 'css', 'html', 'scss', 'javascript', 'json', 'help' },
 }
 
-require('fidget').setup()
 
 vim.diagnostic.config({
   virtual_text = false,
@@ -53,3 +17,37 @@ vim.diagnostic.config({
     source = 'always'
   },
 })
+
+
+-- nvim-cmp
+local cmp = require'cmp'
+
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      end,
+    },
+    mapping = cmp.mapping.preset.insert({
+      ['<CR>'] = cmp.mapping.confirm({ select = true }), 
+      ["<Tab>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.select_next_item()
+        else
+          fallback()
+        end
+      end),
+    }),
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'luasnip' }, -- For luasnip users.
+    }, {
+      { name = 'buffer' },
+    })
+  })
+
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+require('lspconfig')['tsserver'].setup {
+  capabilities = capabilities
+}

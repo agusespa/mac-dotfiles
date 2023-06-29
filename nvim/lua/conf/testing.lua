@@ -4,4 +4,4 @@ require("neotest").setup({
   }
 })
 
-vim.keymap.set('n', '<leader>t', ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>', { noremap = true })
+-- vim.keymap.set('n', '<leader>t', ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>', { noremap = true })
