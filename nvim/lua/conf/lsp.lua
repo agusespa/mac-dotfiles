@@ -62,7 +62,7 @@ lspconfig.yamlls.setup({})
 
 
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { 'lua', 'python', 'java', 'typescript', 'tsx', 'css', 'html', 'scss', 'javascript', 'json', 'help' },
+  ensure_installed = { 'lua', 'python', 'java', 'typescript', 'tsx', 'css', 'html', 'scss', 'javascript', 'json', 'vimdoc' },
 }
 
 vim.diagnostic.config({
