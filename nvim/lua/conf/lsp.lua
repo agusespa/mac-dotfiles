@@ -1,7 +1,16 @@
 -- Setup language servers
 local lspconfig = require('lspconfig')
-lspconfig.tsserver.setup{}
--- lspconfig.angularls.setup{}
+
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+local servers = { 'clangd', 'pyright', 'angularls', 'tsserver' }
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+end
 
 
 require('nvim-treesitter.configs').setup {
@@ -18,6 +27,9 @@ vim.diagnostic.config({
   },
 })
 
+-- nvim-cmp supports additional completion capabilities
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- nvim-cmp
 local cmp = require'cmp'
