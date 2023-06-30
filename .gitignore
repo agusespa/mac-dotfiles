@@ -5,6 +5,7 @@ gcloud/
 gtk-2.0/
 coc/
 gh/
+yarn/
 
 nvim/autoload
 
