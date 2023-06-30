@@ -12,6 +12,17 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
   require('cmp_nvim_lsp').default_capabilities(capabilities)
 )
 
+lspconfig.eslint.setup({})
+lspconfig.stylelint_lsp.setup({
+  filetypes = { "css", "less", "scss" }
+})
+lspconfig.cssls.setup({})
+lspconfig.jsonls.setup({})
+lspconfig.pyright.setup({})
+lspconfig.html.setup({})
+lspconfig.lua_ls.setup({})
+lspconfig.yamlls.setup({})
+lspconfig.clangd.setup({})
 lspconfig.tsserver.setup({})
 
 -- Angular setup
@@ -48,17 +59,6 @@ lspconfig.angularls.setup {
   end
 }
 -- END of Angular setup
-
-lspconfig.eslint.setup({})
-lspconfig.stylelint_lsp.setup({
-  filetypes = { "css", "less", "scss" }
-})
-lspconfig.cssls.setup({})
-lspconfig.jsonls.setup({})
-lspconfig.pyright.setup({})
-lspconfig.html.setup({})
-lspconfig.lua_ls.setup({})
-lspconfig.yamlls.setup({})
 
 
 require('nvim-treesitter.configs').setup {
