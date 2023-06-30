@@ -6,11 +6,6 @@ require('packer').startup(function(use)
     -- LSP plugins
     use 'neovim/nvim-lspconfig'
     use {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig",
-    }
-    use {
             -- Autocompletion
             {'hrsh7th/nvim-cmp'},
             {'hrsh7th/cmp-buffer'},

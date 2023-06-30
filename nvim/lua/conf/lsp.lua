@@ -1,17 +1,15 @@
 -- Setup language servers
 local lspconfig = require('lspconfig')
+local lsp_defaults = lspconfig.util.default_config
 
-require("mason").setup()
-require("mason-lspconfig").setup()
+lsp_defaults.capabilities = vim.tbl_deep_extend(
+  'force',
+  lsp_defaults.capabilities,
+  require('cmp_nvim_lsp').default_capabilities()
+)
 
-local servers = { 'clangd', 'pyright', 'angularls', 'tsserver' }
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
-end
-
+require'lspconfig'.stylelint_lsp.setup{}
+require'lspconfig'.html.setup{}
 
 require('nvim-treesitter.configs').setup {
   ensure_installed = { 'lua', 'python', 'java', 'typescript', 'tsx', 'css', 'html', 'scss', 'javascript', 'json', 'help' },
