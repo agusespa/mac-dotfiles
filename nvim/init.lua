@@ -28,7 +28,7 @@ vim.opt.mouse = 'a'
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.opt.tabstop = 4 
+vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
@@ -59,17 +59,16 @@ vim.o.completeopt = 'menuone,noselect'
 
 --  Appearence
 require("catppuccin").setup({
-    flavour = "mocha", 
+    flavour = "mocha",
     transparent_background = true,
-    show_end_of_buffer = false, -- show the '~' characters after the end of buffers
-    term_colors = false,
+    show_end_of_buffer = false,
     dim_inactive = {
         enabled = false,
         shade = "dark",
         percentage = 0.15,
     },
-    no_italic = false, -- Force no italic
-    no_bold = false, -- Force no bold
+    no_italic = false,
+    no_bold = false,
     styles = {
         comments = { "italic" },
         conditionals = { "italic" },
