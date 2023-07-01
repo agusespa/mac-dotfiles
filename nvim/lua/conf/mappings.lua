@@ -1,15 +1,22 @@
+-- useage notes:
+  -- use leader for actions that use built in or plugin functions
+  -- use letters for actions that are closest to the code editing
+    -- use 'g' + {char} for go to actions
+    -- use 's' + {char} for displaying info
+    -- use 'c' + {char} for code actions
+
+
 vim.g.mapleader = '\''
 
+-- Nvim features
 vim.keymap.set("i", "kj", "<Esc>", { noremap = true })
-
 vim.keymap.set("n", "<leader>q", ":bd<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>s", ":update<CR>", { noremap = true, silent = true })
-
 vim.keymap.set("n", "<leader>e", ":Explore<CR>", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>o", ":ClangFormat<CR>", { noremap = true, silent = true })
-
-vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+-- Styling
+vim.keymap.set("n", "cs", ":ClangFormat<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "cp", ":Prettier<CR>", { noremap = true, silent = true })
 
 -- LSPs
 vim.keymap.set("n", '<leader>r', require('telescope.builtin').lsp_references)
@@ -34,3 +41,6 @@ vim.keymap.set('n', '<leader>c', builtin.git_status, { noremap = true, silent = 
 -- Harpoon
 vim.keymap.set('n', '<leader>h', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>m', ':lua require("harpoon.mark").add_file()<CR>', { noremap = true, silent = true })
+
+-- UndotreeToggle
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
