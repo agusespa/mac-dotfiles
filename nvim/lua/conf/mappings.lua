@@ -14,9 +14,18 @@ vim.keymap.set("n", "<leader>q", ":bd<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>s", ":update<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>e", ":Explore<CR>", { noremap = true, silent = true })
 
--- Styling
-vim.keymap.set("n", "cs", ":ClangFormat<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "cp", ":Prettier<CR>", { noremap = true, silent = true })
+-- Code formatting
+vim.api.nvim_set_keymap('n', 'cs', ':lua FormatCode()<CR>', { noremap = true, silent = true })
+function FormatCode()
+  local filetype = vim.bo.filetype
+  if filetype:match('html|ts|js|css|tsx|jsx|scss') then
+    vim.cmd(':Prettier')
+  else
+    vim.cmd(':ClangFormat')
+  end
+end
+-- vim.keymap.set("n", "cs", ":ClangFormat<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "cp", ":Prettier<CR>", { noremap = true, silent = true })
 
 -- LSPs
 vim.keymap.set("n", '<leader>r', require('telescope.builtin').lsp_references)
