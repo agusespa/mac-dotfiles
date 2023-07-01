@@ -65,13 +65,20 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = { 'lua', 'python', 'java', 'typescript', 'tsx', 'css', 'html', 'scss', 'javascript', 'json', 'vimdoc' },
 }
 
+vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#1e1e2e" })
+
 vim.diagnostic.config({
   virtual_text = true,
   severity_sort = true,
   update_in_insert = false,
   float = {
-    source = 'always'
+    source = 'always',
+    border = 'single',
   },
+})
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = "single",
 })
 
 -- nvim-cmp
@@ -82,21 +89,29 @@ cmp.setup({
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
       end,
+  },
+  window = {
+    completion = {
+      winhighlight = "Normal:CmpNormal",
     },
-    mapping = cmp.mapping.preset.insert({
-      ['<CR>'] = cmp.mapping.confirm({ select = false }),
-      ["<Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-        else
-          fallback()
-        end
-      end),
-    }),
-    sources = cmp.config.sources({
-      { name = 'nvim_lsp' },
-      { name = 'luasnip' },
-    }, {
-      { name = 'buffer' },
-    })
+    documentation = {
+      winhighlight = "Normal:CmpNormal",
+    }
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<CR>'] = cmp.mapping.confirm({ select = false }),
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        fallback()
+      end
+    end),
+  }),
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+  }, {
+    { name = 'buffer' },
   })
+})
