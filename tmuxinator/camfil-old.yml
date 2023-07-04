@@ -1,5 +1,5 @@
 name: camfil-old
-root: ~/Projects/pwa/
+root: ~/Code/pwa/
 
 windows:
   - editor:

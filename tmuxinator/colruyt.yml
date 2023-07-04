@@ -1,5 +1,5 @@
 name: colruyt
-root: ~/Projects/colruyt_selfservice/react-app/
+root: ~/Code/colruyt_selfservice/react-app/
 
 windows:
   - editor:

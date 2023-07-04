@@ -1,5 +1,5 @@
 name: vessel
-root: ~/Programming/vessel-pwa/
+root: ~/Code/vessel-pwa/
 
 windows:
   - editor:
