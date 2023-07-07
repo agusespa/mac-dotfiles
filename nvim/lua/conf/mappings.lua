@@ -17,15 +17,15 @@ vim.keymap.set("n", "<leader>s", ":update<CR>", { noremap = true, silent = false
 vim.keymap.set("n", "<leader>e", ":Explore<CR>", default_opts)
 
 -- Code formatting
-vim.api.nvim_set_keymap('n', 'cs', ':lua FormatCode()<CR>', { noremap = true, silent = false })
+vim.api.nvim_set_keymap('n', 'cs', ':lua FormatCode()<CR>', default_opts)
 function FormatCode()
   local ft = vim.bo.filetype
   if ft == "typescript" or ft == "javascript" or ft == "tsx" or ft == "html" or ft == "css" or ft == "scss" or ft == "jsx" or ft == "json" then
     vim.cmd(':Prettier')
+    print("Code formatted with Prettier")
   elseif ft == "java" or ft == "c" then
     vim.cmd(':ClangFormat')
-  elseif ft == "python" then
-    print("Unsupported format: " .. ft)
+    print("Code formatted with ClangFormat")
   else
     print("Unsupported format: " .. ft)
   end
