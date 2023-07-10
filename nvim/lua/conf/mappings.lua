@@ -20,7 +20,7 @@ vim.keymap.set("n", "<leader>e", ":Explore<CR>", default_opts)
 vim.api.nvim_set_keymap('n', 'cs', ':lua FormatCode()<CR>', default_opts)
 function FormatCode()
   local ft = vim.bo.filetype
-  if ft == "typescript" or ft == "javascript" or ft == "tsx" or ft == "html" or ft == "css" or ft == "scss" or ft == "jsx" or ft == "json" then
+  if ft == "typescript" or ft == "typescriptreact" or ft == "javascript" or ft == "tsx" or ft == "html" or ft == "css" or ft == "scss" or ft == "jsx" or ft == "jsonc" then
     vim.cmd(':Prettier')
     print("Code formatted with Prettier")
   elseif ft == "java" or ft == "c" then
