@@ -19,5 +19,14 @@ alias ls="ls -a"
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 
-export C_INCLUDE_PATH="/opt/homebrew/include/glib-2.0"
+
+case $(sw_vers -productVersion) in
+    13.*)
+        export C_INCLUDE_PATH="/opt/homebrew/include/glib-2.0"
+        ;;
+    11.*)
+        export C_INCLUDE_PATH="/usr/local/include/glib-2.0"
+        ;;
+    *)
+esac
 
