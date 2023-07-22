@@ -24,6 +24,8 @@ lspconfig.lua_ls.setup({})
 lspconfig.yamlls.setup({})
 lspconfig.clangd.setup({})
 lspconfig.tsserver.setup({})
+lspconfig.gopls.setup({})
+lspconfig.golangci_lint_ls.setup({})
 
 -- Angular setup
 local uv = vim.loop
