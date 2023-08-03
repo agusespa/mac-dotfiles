@@ -30,3 +30,4 @@ case $(sw_vers -productVersion) in
     *)
 esac
 
+export GOPATH="/Users/agusespa/Code/go-lib"
