@@ -13,6 +13,7 @@ local default_opts = {noremap = true, silent = true}
 -- Nvim features
 vim.keymap.set("i", "kj", "<Esc>", default_opts)
 vim.keymap.set("n", "<leader>q", ":bd<CR>", { noremap = true, silent = false })
+vim.keymap.set("n", "<leader>w", ":%bd|e#|bd#<CR>", { noremap = true, silent = false })
 vim.keymap.set("n", "<leader>s", ":update<CR>", { noremap = true, silent = false })
 vim.keymap.set("n", "<leader>e", ":Explore<CR>", default_opts)
 
