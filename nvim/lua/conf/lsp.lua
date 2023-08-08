@@ -22,7 +22,9 @@ lspconfig.pyright.setup({})
 lspconfig.html.setup({})
 lspconfig.lua_ls.setup({})
 lspconfig.yamlls.setup({})
-lspconfig.clangd.setup({})
+lspconfig.clangd.setup({
+  filetypes = { "c", "cpp", "objc" }
+})
 lspconfig.tsserver.setup({})
 lspconfig.gopls.setup({})
 lspconfig.golangci_lint_ls.setup({})
