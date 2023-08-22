@@ -31,27 +31,32 @@ lspconfig.golangci_lint_ls.setup({})
 lspconfig.bufls.setup{}
 lspconfig.jdtls.setup{}
 
-lspconfig.angularls.setup{}
--- OLD Angular setup
--- local uv = vim.loop
--- local util = require "lspconfig.util"
--- local function get_node_modules(root_dir)
---   local root_node = root_dir .. "/node_modules"
---   local stats = uv.fs_stat(root_node)
---   if stats == nil then
---     return ''
---   else
---     return root_node
---   end
+local cwd = vim.fn.getcwd()
+local project_library_path = cwd .. "/node_modules"
+local cmd = {"ngserver", "--stdio", "--tsProbeLocations", project_library_path , "--ngProbeLocations", project_library_path}
+
+require'lspconfig'.angularls.setup{
+  cmd = cmd,
+  on_new_config = function(new_config,new_root_dir)
+    new_config.cmd = cmd
+  end,
+}
+-- Angular setup
+-- local util = require "conf.util"
+-- local function get_probe_dir(root_dir)
+--   local project_root = util.find_node_modules_ancestor(root_dir)
+--   return project_root and (project_root .. '/node_modules') or ''
 -- end
--- local default_node_modules = get_node_modules(vim.fn.getcwd())
+--
+-- local default_probe_dir = get_probe_dir(vim.fn.getcwd())
+--
 -- local ngls_cmd = {
 --   "ngserver",
 --   "--stdio",
 --   "--tsProbeLocations",
---   default_node_modules,
+--   default_probe_dir,
 --   "--ngProbeLocations",
---   default_node_modules,
+--   default_probe_dir,
 --   "--includeCompletionsWithSnippetText",
 --   "--includeAutomaticOptionalChainCompletions",
 -- }
