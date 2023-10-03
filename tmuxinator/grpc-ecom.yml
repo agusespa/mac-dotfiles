@@ -1,11 +1,11 @@
-name: learn
-root: ~/Code/learn/
+name: ecom
+root: ~/Code/grpc-ecom
 
 windows:
   - editor:
       layout: 52ef,125x34,0,0{25x34,0,0,0,99x34,26,0,2}
       panes:
-        - nvm use --lts
+        - 
         - nvim .
   - files:
       panes:
