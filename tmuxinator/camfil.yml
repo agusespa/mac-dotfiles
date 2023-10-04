@@ -1,5 +1,5 @@
 name: camfil
-root: ~/Code/pwa-migration/pwa/
+root: ~/Code/pwa/
 
 windows:
   - editor:

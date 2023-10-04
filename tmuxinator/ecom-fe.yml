@@ -1,5 +1,5 @@
 name: ecom-fe
-root: ~/Code/ecom-fe/
+root: ~/Code/ecom-fe/angular
 
 windows:
   - editor:

@@ -31,44 +31,11 @@ lspconfig.golangci_lint_ls.setup({})
 lspconfig.bufls.setup{}
 lspconfig.jdtls.setup{}
 
+-- Angular setup
 local cwd = vim.fn.getcwd()
 local project_library_path = cwd .. "/node_modules"
 local cmd = {"ngserver", "--stdio", "--tsProbeLocations", project_library_path , "--ngProbeLocations", project_library_path}
-
-require'lspconfig'.angularls.setup{
-  cmd = cmd,
-  on_new_config = function(new_config,new_root_dir)
-    new_config.cmd = cmd
-  end,
-}
--- Angular setup
--- local util = require "conf.util"
--- local function get_probe_dir(root_dir)
---   local project_root = util.find_node_modules_ancestor(root_dir)
---   return project_root and (project_root .. '/node_modules') or ''
--- end
---
--- local default_probe_dir = get_probe_dir(vim.fn.getcwd())
---
--- local ngls_cmd = {
---   "ngserver",
---   "--stdio",
---   "--tsProbeLocations",
---   default_probe_dir,
---   "--ngProbeLocations",
---   default_probe_dir,
---   "--includeCompletionsWithSnippetText",
---   "--includeAutomaticOptionalChainCompletions",
--- }
--- lspconfig.angularls.setup {
---   filetypes = { "typescript", "html" },
---   cmd = ngls_cmd,
---   capabilities = capabilities,
---   root_dir = util.root_pattern("angular.json"),
---   on_new_config = function(new_config)
---     new_config.cmd = ngls_cmd
---   end
--- }
+require'lspconfig'.angularls.setup{cmd = cmd}
 -- END of Angular setup
 
 
