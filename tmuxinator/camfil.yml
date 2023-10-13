@@ -1,5 +1,5 @@
 name: camfil
-root: ~/Code/pwa/
+root: ~/Code/backups/camfil/pwa/
 
 windows:
   - editor:
