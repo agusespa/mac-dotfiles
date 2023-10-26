@@ -1,13 +1,12 @@
-name: ecom-fe
+name: ecom-fe-a
 root: ~/Code/ecom-fe/angular
 
 windows:
   - editor:
       layout: 52ef,125x34,0,0{25x34,0,0,0,99x34,26,0,2}
       panes:
-        - nvm use --lts
+        - nvm use 18.10.0
         - nvim .
   - files:
       panes:
         - ranger
-

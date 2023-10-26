@@ -1,11 +1,11 @@
-name: vessel
-root: ~/Code/vessel-pwa/
+name: ecom-fe-n
+root: ~/Code/ecom-fe/next
 
 windows:
   - editor:
       layout: 52ef,125x34,0,0{25x34,0,0,0,99x34,26,0,2}
       panes:
-        - nvm use 18.10.0
+        - nvm use --lts
         - nvim .
   - files:
       panes:
