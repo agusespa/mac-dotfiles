@@ -32,10 +32,11 @@ lspconfig.bufls.setup{}
 lspconfig.jdtls.setup{}
 
 -- Angular setup
-local cwd = vim.fn.getcwd()
-local project_library_path = cwd .. "/node_modules"
-local cmd = {"ngserver", "--stdio", "--tsProbeLocations", project_library_path , "--ngProbeLocations", project_library_path}
-require'lspconfig'.angularls.setup{cmd = cmd}
+-- local cwd = vim.fn.getcwd()
+-- local project_library_path = cwd .. "/node_modules"
+-- local cmd = {"ngserver", "--stdio", "--tsProbeLocations", project_library_path , "--ngProbeLocations", project_library_path}
+-- require'lspconfig'.angularls.setup{cmd = cmd}
+require'lspconfig'.angularls.setup{}
 -- END of Angular setup
 
 
