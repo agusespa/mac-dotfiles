@@ -30,6 +30,7 @@ lspconfig.gopls.setup({})
 lspconfig.golangci_lint_ls.setup({})
 lspconfig.bufls.setup{}
 lspconfig.jdtls.setup{}
+lspconfig.dartls.setup{}
 
 -- Angular setup
 -- local cwd = vim.fn.getcwd()
