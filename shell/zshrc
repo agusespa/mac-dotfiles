@@ -30,4 +30,8 @@ case $(sw_vers -productVersion) in
     *)
 esac
 
-export GOPATH="/Users/agusespa/Code/go-lib"
+export GOPATH="$HOME/Code/go-lib"
+
+export PATH="$PATH:$HOME/Library/Flutter/bin"
+
+export PATH="/opt/homebrew/Cellar/ruby/3.2.2_1/bin:$PATH"

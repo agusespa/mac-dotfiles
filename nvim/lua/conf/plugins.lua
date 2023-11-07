@@ -45,6 +45,7 @@ require('packer').startup(function(use)
     use 'numToStr/Comment.nvim'
     use 'prettier/vim-prettier'
     use 'rhysd/vim-clang-format'
+    use 'dart-lang/dart-vim-plugin'
     use 'tpope/vim-fugitive'
     use 'mbbill/undotree'
     use 'tpope/vim-sleuth'

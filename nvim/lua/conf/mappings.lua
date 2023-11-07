@@ -27,6 +27,9 @@ function FormatCode()
   elseif ft == "java" or ft == "c" or ft == "proto" then
     vim.cmd(':ClangFormat')
     print("Code formatted with ClangFormat")
+  elseif ft == "dart" then
+    vim.cmd(':DartFmt')
+    print("Code formatted with ClangFormat")
   else
     print("Unsupported format: " .. ft)
   end
