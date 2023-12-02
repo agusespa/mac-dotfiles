@@ -23,7 +23,7 @@ lspconfig.html.setup({})
 lspconfig.lua_ls.setup({})
 lspconfig.yamlls.setup({})
 lspconfig.clangd.setup({
-  filetypes = { "c", "cpp", "objc" }
+  filetypes = { "c", "cpp", "objc" },
 })
 lspconfig.tsserver.setup({})
 lspconfig.gopls.setup({})
@@ -31,14 +31,7 @@ lspconfig.golangci_lint_ls.setup({})
 lspconfig.bufls.setup{}
 lspconfig.jdtls.setup{}
 lspconfig.dartls.setup{}
-
--- Angular setup
--- local cwd = vim.fn.getcwd()
--- local project_library_path = cwd .. "/node_modules"
--- local cmd = {"ngserver", "--stdio", "--tsProbeLocations", project_library_path , "--ngProbeLocations", project_library_path}
--- require'lspconfig'.angularls.setup{cmd = cmd}
-require'lspconfig'.angularls.setup{}
--- END of Angular setup
+lspconfig.angularls.setup{}
 
 
 require('nvim-treesitter.configs').setup {

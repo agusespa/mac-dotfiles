@@ -1,0 +1,12 @@
+name: roxtec
+root: ~/Code/roxtec
+
+windows:
+  - editor:
+      layout: 5681,131x36,0,0{24x36,0,0,0,106x36,25,0,2}
+      panes:
+        - nvm use 18.16.0
+        - nvim .
+  - files:
+      panes:
+        - ranger
