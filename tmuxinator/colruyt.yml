@@ -1,5 +1,5 @@
 name: colruyt
-root: ~/Code/colruyt/self-service-frontend
+root: ~/Code/colruyt/self-service-frontend/module
 
 windows:
   - editor:
