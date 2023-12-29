@@ -58,13 +58,6 @@ require('packer').startup(function(use)
     use 'ThePrimeagen/harpoon'
     use 'fatih/vim-go'
     use 'vim-test/vim-test'
-    use {
-        "nvim-neotest/neotest",
-        requires = {
-        "antoinemadec/FixCursorHold.nvim",
-        "nvim-neotest/neotest-vim-test"
-        }
-    }
 
     -- Appearence plugins
     use { "catppuccin/nvim", as = "catppuccin" }

@@ -35,7 +35,7 @@ lspconfig.angularls.setup{}
 
 
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { 'lua', 'python', 'java', 'typescript', 'tsx', 'css', 'html', 'scss', 'javascript', 'json', 'vimdoc' },
+  ensure_installed = { 'lua', 'python', 'java', 'c', 'cpp', 'typescript', 'tsx', 'css', 'html', 'scss', 'javascript', 'json', 'vimdoc' },
 }
 
 vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#1e1e2e" })
