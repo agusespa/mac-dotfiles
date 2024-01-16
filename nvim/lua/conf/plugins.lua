@@ -18,7 +18,7 @@ require('packer').startup(function(use)
         {'hrsh7th/cmp-cmdline'},
         { 'codota/tabnine-nvim', run = "./dl_binaries.sh" },
         -- Snippets
-        {'L3MON4D3/LuaSnip'},
+        {'L3MON4D3/LuaSnip', after = 'nvim-cmp'},
         {'saadparwaiz1/cmp_luasnip'},
         {'rafamadriz/friendly-snippets'},
     }

@@ -32,6 +32,13 @@ lspconfig.bufls.setup{}
 lspconfig.jdtls.setup{}
 lspconfig.dartls.setup{}
 lspconfig.angularls.setup{}
+lspconfig.ccls.setup {
+  init_options = {
+    cache = {
+      directory = ".ccls-cache";
+    };
+  }
+}
 
 
 require('nvim-treesitter.configs').setup {
@@ -53,6 +60,8 @@ vim.diagnostic.config({
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = "single",
 })
+
+require("luasnip.loaders.from_vscode").lazy_load()
 
 -- nvim-cmp
 local cmp = require'cmp'
@@ -88,6 +97,8 @@ cmp.setup({
     { name = 'buffer' },
   })
 })
+
+require'luasnip'.filetype_extend("javascript", {"react"})
 
 require('tabnine').setup({
   disable_auto_comment=true,
