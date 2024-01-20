@@ -1,5 +1,5 @@
-name: ecom-grpc
-root: ~/Code/ecom-be-grpc
+name: ecom-be
+root: ~/Code/ecom-sample/ecom-be
 
 windows:
   - editor:

@@ -23,7 +23,7 @@ lspconfig.html.setup({})
 lspconfig.lua_ls.setup({})
 lspconfig.yamlls.setup({})
 lspconfig.clangd.setup({
-  filetypes = { "c", "cpp", "objc" },
+  filetypes = { "c", "cpp" },
 })
 lspconfig.tsserver.setup({})
 lspconfig.gopls.setup({})
@@ -32,14 +32,6 @@ lspconfig.bufls.setup{}
 lspconfig.jdtls.setup{}
 lspconfig.dartls.setup{}
 lspconfig.angularls.setup{}
-lspconfig.ccls.setup {
-  init_options = {
-    cache = {
-      directory = ".ccls-cache";
-    };
-  }
-}
-
 
 require('nvim-treesitter.configs').setup {
   ensure_installed = { 'lua', 'python', 'java', 'c', 'cpp', 'typescript', 'tsx', 'css', 'html', 'scss', 'javascript', 'json', 'vimdoc' },
@@ -62,6 +54,7 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 })
 
 require("luasnip.loaders.from_vscode").lazy_load()
+require'luasnip'.filetype_extend("javascript", {"react"})
 
 -- nvim-cmp
 local cmp = require'cmp'
@@ -97,8 +90,6 @@ cmp.setup({
     { name = 'buffer' },
   })
 })
-
-require'luasnip'.filetype_extend("javascript", {"react"})
 
 require('tabnine').setup({
   disable_auto_comment=true,
