@@ -16,6 +16,7 @@ nvim/autoload
 nvim/autoload/plug.vim
 nvim/plugged/
 nvim/plugin/
+tmux/plugins/
 
 nvim/plugged/nord-vim/autoload
 nvim/plugged/nord-vim/changelog.md
