@@ -1,5 +1,5 @@
-name: ecom-be
-root: ~/Code/ecom-sample/ecom-be
+name: auth
+root: ~/Code/auth
 
 windows:
   - editor:
@@ -13,5 +13,5 @@ windows:
   - terms:
       layout: even-horizontal
       panes:
-        -
-        -
+        - 
+        - 
