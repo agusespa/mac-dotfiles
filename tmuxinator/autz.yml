@@ -1,5 +1,5 @@
-name: auth
-root: ~/Code/auth
+name: autz
+root: ~/Code/autz
 
 windows:
   - editor:
