@@ -11,7 +11,9 @@ windows:
       panes:
         - ranger
   - terms:
-      layout: even-horizontal
+      layout: tiled
       panes:
+        -
+        -
         -
         -
