@@ -1,14 +1,14 @@
 -- useage notes:
-  -- use leader for actions that use built in or plugin functions
-  -- use letters for actions that are closest to the code editing
-    -- use 'g' + {char} for go to actions
-    -- use 's' + {char} for displaying info
-    -- use 'c' + {char} for code actions
+-- use leader for actions that use built in or plugin functions
+-- use letters for actions that are closest to the code editing
+-- use 'g' + {char} for go to actions
+-- use 's' + {char} for displaying info
+-- use 'c' + {char} for code actions
 
 
 vim.g.mapleader = '\''
 
-local default_opts = {noremap = true, silent = true}
+local default_opts = { noremap = true, silent = true }
 
 -- Nvim features
 vim.keymap.set("i", "kj", "<Esc>", default_opts)
@@ -31,7 +31,8 @@ function FormatCode()
     vim.cmd(':DartFmt')
     print("Code formatted with ClangFormat")
   else
-    print("Unsupported format: " .. ft)
+    vim.lsp.buf.format()
+    print("Code formatted with LspFormat")
   end
 end
 

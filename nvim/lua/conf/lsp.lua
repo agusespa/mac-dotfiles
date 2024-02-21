@@ -32,6 +32,9 @@ lspconfig.bufls.setup{}
 lspconfig.jdtls.setup{}
 lspconfig.dartls.setup{}
 lspconfig.angularls.setup{}
+lspconfig.bashls.setup{}
+lspconfig.sqlls.setup{}
+lspconfig.lemminx.setup{}
 
 require('nvim-treesitter.configs').setup {
   ensure_installed = { 'lua', 'python', 'java', 'c', 'cpp', 'go', 'gomod', 'gosum', 'typescript', 'tsx', 'css', 'html', 'scss', 'javascript', 'json', 'vimdoc', 'gitignore' },
