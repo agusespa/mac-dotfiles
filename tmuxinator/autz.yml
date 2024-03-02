@@ -9,7 +9,7 @@ windows:
         - nvim .
   - files:
       panes:
-        - ranger
+        - lf
   - terms:
       layout: even-horizontal
       panes:

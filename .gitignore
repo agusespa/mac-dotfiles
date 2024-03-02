@@ -8,6 +8,10 @@ coc/
 gh/
 yarn/
 Unreal Engine/
+xbuild/
+NuGet/
+stetic/
+filezilla/
 
 nvim/autoload
 

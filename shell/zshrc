@@ -32,13 +32,8 @@ case $(sw_vers -productVersion) in
 esac
 
 export GOPATH="$HOME/Code/go-lib"
+export CLASSPATH="/Library/Saxon/saxon-he-12.4.jar"
 export PATH="/opt/homebrew/bin:$PATH"
-
-# React Native Development
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # ONLY for local testing
 export ENCRYPTION_KEY="5xeE7mY64dp7GlbGu8IJyZ2XqjxT4gmPetaTF//2liI="

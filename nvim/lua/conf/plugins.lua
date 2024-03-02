@@ -1,6 +1,5 @@
 vim.cmd [[packadd packer.nvim]]
 require('packer').startup(function(use)
-
     use 'wbthomason/packer.nvim'
 
     -- LSP plugins
@@ -11,16 +10,16 @@ require('packer').startup(function(use)
     }
     use {
         -- Autocompletion
-        {'hrsh7th/nvim-cmp'},
-        {'hrsh7th/cmp-buffer'},
-        {'hrsh7th/cmp-path'},
-        {'hrsh7th/cmp-nvim-lsp'},
-        {'hrsh7th/cmp-cmdline'},
-        {'codota/tabnine-nvim', run = "./dl_binaries.sh" },
+        { 'hrsh7th/nvim-cmp' },
+        { 'hrsh7th/cmp-buffer' },
+        { 'hrsh7th/cmp-path' },
+        { 'hrsh7th/cmp-nvim-lsp' },
+        { 'hrsh7th/cmp-cmdline' },
+        { 'codota/tabnine-nvim',         run = "./dl_binaries.sh" },
         -- Snippets
-        {"L3MON4D3/LuaSnip"},
+        { "L3MON4D3/LuaSnip" },
         { "rafamadriz/friendly-snippets" },
-        {'saadparwaiz1/cmp_luasnip'},
+        { 'saadparwaiz1/cmp_luasnip' },
     }
 
     -- General plugins
@@ -28,7 +27,7 @@ require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
-    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+    use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
 
     -- Utility plugins
     use {
@@ -51,8 +50,8 @@ require('packer').startup(function(use)
     use 'mbbill/undotree'
     use 'tpope/vim-sleuth'
     use {
-      'nvim-telescope/telescope.nvim', tag = '0.1.4',
-      requires = { {'nvim-lua/plenary.nvim'} }
+        'nvim-telescope/telescope.nvim', tag = '0.1.4',
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use "nvim-telescope/telescope-file-browser.nvim"
     use 'ThePrimeagen/harpoon'
@@ -61,5 +60,4 @@ require('packer').startup(function(use)
 
     -- Appearence plugins
     use { "catppuccin/nvim", as = "catppuccin" }
-
 end)

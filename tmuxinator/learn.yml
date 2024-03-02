@@ -9,4 +9,4 @@ windows:
         - nvim .
   - files:
       panes:
-        - ranger
+        - lf
