@@ -1,11 +1,11 @@
-name: colruyt
-root: ~/Code/colruyt/self-service-frontend/module
+name: col-be
+root: ~/Code/colruyt/colruyt-app
 
 windows:
   - editor:
       layout: 5681,131x36,0,0{24x36,0,0,0,106x36,25,0,2}
       panes:
-        - nvm use --lts
+        - 
         - nvim .
   - files:
       panes:
