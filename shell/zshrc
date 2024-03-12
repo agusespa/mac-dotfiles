@@ -39,3 +39,5 @@ eval "$(jenv init -)"
 
 # ONLY for local testing
 export ENCRYPTION_KEY="5xeE7mY64dp7GlbGu8IJyZ2XqjxT4gmPetaTF//2liI="
+export DB_PASSWORD="sg46sg46"
+export EMAIL_API_KEY="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"
