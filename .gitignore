@@ -28,3 +28,5 @@ nvim/plugged/nord-vim/readme.md
 nvim/plugged/nord-vim/license
 memos.json
 package-lock.json
+
+env.sh
