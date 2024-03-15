@@ -36,4 +36,4 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-source env
+source $HOME/.config/shell/env.sh
