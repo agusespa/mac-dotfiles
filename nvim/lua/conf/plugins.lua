@@ -42,12 +42,12 @@ require('packer').startup(function(use)
         after = 'nvim-treesitter',
     }
     use "lukas-reineke/indent-blankline.nvim"
-    use 'numToStr/Comment.nvim'
     use 'prettier/vim-prettier'
     use 'psf/black'
     use 'rhysd/vim-clang-format'
     use 'dart-lang/dart-vim-plugin'
     use 'tpope/vim-fugitive'
+    use 'tpope/vim-commentary'
     use 'mbbill/undotree'
     use 'tpope/vim-sleuth'
     use {

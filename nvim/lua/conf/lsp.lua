@@ -25,15 +25,14 @@ lspconfig.yamlls.setup({})
 lspconfig.clangd.setup({
   filetypes = { "c", "cpp" },
 })
-lspconfig.omnisharp.setup {
-  -- cmd = { "dotnet", "/Users/agusespa/.local/bin/omnisharp" },
-}
+lspconfig.omnisharp.setup({})
 lspconfig.tsserver.setup({})
 lspconfig.gopls.setup({})
 lspconfig.golangci_lint_ls.setup({})
 lspconfig.bufls.setup({})
 lspconfig.jdtls.setup({})
 lspconfig.angularls.setup({})
+lspconfig.svelte.setup({})
 lspconfig.bashls.setup({})
 lspconfig.sqlls.setup({})
 lspconfig.lemminx.setup({
@@ -53,7 +52,7 @@ lspconfig.lemminx.setup({
 })
 
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { 'lua', 'python', 'java', 'c', 'cpp', 'go', 'gomod', 'gosum', 'typescript', 'tsx', 'css', 'html', 'scss', 'javascript', 'json', 'vimdoc', 'gitignore' },
+  ensure_installed = { 'lua', 'python', 'java', 'c', 'cpp', 'go', 'gomod', 'gosum', 'typescript', 'svelte', 'tsx', 'css', 'html', 'scss', 'javascript', 'json', 'vimdoc', 'gitignore' },
 }
 
 vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#1e1e2e" })
