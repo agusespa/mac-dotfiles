@@ -1,0 +1,12 @@
+name: comp
+root: ~/Code/components
+
+windows:
+  - editor:
+      layout: 52ef,125x34,0,0{25x34,0,0,0,99x34,26,0,2}
+      panes:
+        -
+        - nvim .
+  - files:
+      panes:
+        - lf
