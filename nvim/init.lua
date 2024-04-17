@@ -96,8 +96,6 @@ require("catppuccin").setup({
 
 vim.cmd("colorscheme catppuccin")
 
-require('Comment').setup()
-
 require("ibl").setup {
     scope = { enabled = false },
 }

@@ -33,7 +33,9 @@ lspconfig.bufls.setup({})
 lspconfig.jdtls.setup({})
 lspconfig.angularls.setup({})
 lspconfig.svelte.setup({})
-lspconfig.bashls.setup({})
+lspconfig.bashls.setup({
+  filetypes = { "sh" },
+})
 lspconfig.sqlls.setup({})
 lspconfig.lemminx.setup({
   settings = {
