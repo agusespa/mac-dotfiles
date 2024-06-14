@@ -13,27 +13,50 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-alias mux="tmuxinator"
-alias ls="ls -a"
-alias python="python3"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# pnpm
+export PNPM_HOME="/Users/agusespa/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 
-case $(sw_vers -productVersion) in
-    13.*)
-        export C_INCLUDE_PATH="/opt/homebrew/include/glib-2.0"
-        ;;
-    11.*)
-        export C_INCLUDE_PATH="/usr/local/include/glib-2.0"
-        ;;
-    *)
-esac
+export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/14/bin"
+export PATH="$PATH:/opt/homebrew/bin"
+export PATH="$PATH:$HOME/.jenv/bin"
+export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+export PATH="$PATH:$HOME/Library/Android/sdk/tools"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 
+export C_INCLUDE_PATH="/opt/homebrew/include/glib-2.0"
 export GOPATH="$HOME/Code/go-lib"
 export CLASSPATH="/Library/Saxon/saxon-he-12.4.jar"
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="$HOME/.jenv/bin:$PATH"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export ANDROID_NDK_HOME="$HOME/Library/Android/sdk/ndk/26.3.11579264"
+
 eval "$(jenv init -)"
+
+alias mux="tmuxinator"
+alias la="ls -A"
+alias ll="ls -l"
 
 source $HOME/.config/shell/env.sh

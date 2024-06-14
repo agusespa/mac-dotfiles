@@ -1,0 +1,17 @@
+name: col-wc
+root: ~/Code/colruyt/colruyt-app/censhare-Custom/censhare-Server/app/web
+
+windows:
+  - editor:
+      layout: 5681,131x36,0,0{24x36,0,0,0,106x36,25,0,2}
+      panes:
+        - nvm use 16.10.0
+        - nvim .
+  - files:
+      panes:
+        - lf
+  - editor2:
+      layout: 5681,131x36,0,0{24x36,0,0,0,106x36,25,0,2}
+      panes:
+        - cd ~/Code/colruyt/censhare-local/sample/censhare-Client5/web && nvm use 16.10.0 
+        - cd ~/Code/colruyt/censhare-local/sample/censhare-Client5/web && nvim .
