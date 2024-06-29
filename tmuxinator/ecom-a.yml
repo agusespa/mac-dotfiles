@@ -3,7 +3,7 @@ root: ~/Code/ecom-sample/ecom-client/angular
 
 windows:
   - editor:
-      layout: 52ef,125x34,0,0{25x34,0,0,0,99x34,26,0,2}
+      layout: f802,222x55,0,0{67x55,0,0,29,154x55,68,0,31}
       panes:
         - nvm use 18.10.0
         - nvim .

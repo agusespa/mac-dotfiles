@@ -3,7 +3,7 @@ root: ~/Code/colruyt/colruyt-app
 
 windows:
   - editor:
-      layout: 5681,131x36,0,0{24x36,0,0,0,106x36,25,0,2}
+      layout: f802,222x55,0,0{67x55,0,0,29,154x55,68,0,31}
       panes:
         - nvm use 16.10.0
         - nvim .
