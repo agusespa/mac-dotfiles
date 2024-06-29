@@ -31,6 +31,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.splitright = true
 
 vim.opt.smartindent = true
 
@@ -101,7 +102,7 @@ require("ibl").setup {
 }
 
 require 'treesitter-context'.setup {
-    enable = false,            -- Enable this plugin (Can be enabled/disabled later via commands)
+    enable = false,           -- Enable this plugin (Can be enabled/disabled later via commands)
     max_lines = 0,            -- How many lines the window should span. Values <= 0 mean no limit.
     min_window_height = 0,    -- Minimum editor window height to enable context. Values <= 0 mean no limit.
     line_numbers = true,
@@ -113,3 +114,9 @@ require 'treesitter-context'.setup {
     separator = nil,
     zindex = 20, -- The Z-index of the context window
 }
+
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        vim.cmd("TagbarToggle")
+    end,
+})

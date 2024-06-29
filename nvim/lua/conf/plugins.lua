@@ -49,6 +49,7 @@ require('packer').startup(function(use)
     use 'tpope/vim-fugitive'
     use 'tpope/vim-commentary'
     use 'mbbill/undotree'
+    use 'preservim/tagbar'
     use 'tpope/vim-sleuth'
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
