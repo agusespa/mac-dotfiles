@@ -64,3 +64,6 @@ vim.keymap.set('n', '<leader>m', ':lua require("harpoon.mark").add_file()<CR>', 
 
 -- UndotreeToggle
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+
+-- Tagbar
+vim.keymap.set('n', '<leader>t', ':TagbarToggle<CR>')
