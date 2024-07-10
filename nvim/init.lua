@@ -3,7 +3,7 @@ require("conf.mappings")
 require("conf.telescope")
 require("conf.lsp")
 require("conf.lualine")
-require("conf.bufferline")
+-- require("conf.bufferline")
 
 vim.opt.termguicolors = true
 
