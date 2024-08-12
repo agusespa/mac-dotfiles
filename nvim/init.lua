@@ -89,7 +89,9 @@ require("catppuccin").setup({
         cmp = true,
         gitsigns = true,
         nvimtree = true,
-        telescope = true,
+        telescope = {
+            enabled = true,
+        },
         harpoon = true,
         treesitter = true,
     },

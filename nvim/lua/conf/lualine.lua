@@ -3,7 +3,7 @@ require('lualine').setup {
     icons_enabled = false,
     section_separators = '',
     component_separators = '',
-    theme = 'nightfly',
+    theme = 'catppuccin',
     disabled_filetypes = {
       statusline = {},
       winbar = {},

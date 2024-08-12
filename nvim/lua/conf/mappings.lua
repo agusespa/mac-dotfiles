@@ -59,8 +59,10 @@ vim.api.nvim_set_keymap('v', '<leader>g', 'y<ESC>:Telescope live_grep default_te
 vim.keymap.set('n', '<leader>c', builtin.git_status, default_opts)
 
 -- Harpoon
-vim.keymap.set('n', '<leader>h', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>m', ':lua require("harpoon.mark").add_file()<CR>', { noremap = true, silent = true })
+local harpoon = require("harpoon")
+harpoon:setup()
+vim.keymap.set("n", "<leader>h", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+vim.keymap.set("n", "<leader>m", function() harpoon:list():add() end)
 
 -- UndotreeToggle
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)

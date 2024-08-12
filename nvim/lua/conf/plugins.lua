@@ -27,6 +27,7 @@ require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+    use "nvim-lua/plenary.nvim"
     -- use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
 
     -- Utility plugins
@@ -56,7 +57,11 @@ require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use "nvim-telescope/telescope-file-browser.nvim"
-    use 'ThePrimeagen/harpoon'
+    use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { { "nvim-lua/plenary.nvim" } }
+    }
     use 'fatih/vim-go'
     use 'vim-test/vim-test'
 
