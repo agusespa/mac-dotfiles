@@ -7,6 +7,8 @@ require("conf.lualine")
 
 vim.opt.termguicolors = true
 
+vim.cmd("language en_US")
+
 vim.opt.textwidth = 0
 vim.opt.ruler = true
 vim.opt.nu = true
