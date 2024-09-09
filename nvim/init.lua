@@ -119,8 +119,8 @@ require 'treesitter-context'.setup {
     zindex = 20, -- The Z-index of the context window
 }
 
-vim.api.nvim_create_autocmd("VimEnter", {
-    callback = function()
-        vim.cmd("TagbarToggle")
-    end,
-})
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--     callback = function()
+--         vim.cmd("TagbarToggle")
+--     end,
+-- })
