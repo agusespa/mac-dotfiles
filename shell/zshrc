@@ -1,12 +1,23 @@
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# Define colors
+local cyan="%F{189}"
+local gray="%F{145}"
+local green="%F{43}"
+local yellow="%F{221}"
+local pink="%F{212}"
+local reset_color="%f"
+function parse_git_branch() {
+  if git rev-parse --abbrev-ref HEAD >/dev/null 2>&1; then
+    local branch=$(git rev-parse --abbrev-ref HEAD)
+    local dirty=$(git status --porcelain 2>/dev/null)
+    if [[ -n $dirty ]]; then
+      echo "${gray}git(${green}${branch} ${yellow}*${gray})"
+    else
+      echo "${gray}git(${green}${branch}${gray})"
+    fi
+  fi
+}
+PROMPT="${cyan}%~${reset_color} $(parse_git_branch) ${pink}$ ${reset_color}"
 
-ZSH_THEME="robbyrussell"
-zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 
 export NVM_DIR="$HOME/.nvm"
@@ -51,8 +62,10 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export C_INCLUDE_PATH="/opt/homebrew/include/glib-2.0"
 export GOPATH="$HOME/Code/go-lib"
 export CLASSPATH="/Library/Saxon/saxon-he-12.4.jar"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-export ANDROID_NDK_HOME="$HOME/Library/Android/sdk/ndk/26.3.11579264"
+export PATH="$PATH:$ANDROID_HOME/emulator"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
 eval "$(jenv init -)"
 

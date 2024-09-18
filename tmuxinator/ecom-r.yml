@@ -1,5 +1,5 @@
 name: ecom react native
-root: ~/Code/ecom-sample/ecom-client/react-native
+root: ~/Code/ecom-sample/ecom-client/ecom-native
 
 windows:
   - editor:
