@@ -10,13 +10,14 @@ function parse_git_branch() {
     local branch=$(git rev-parse --abbrev-ref HEAD)
     local dirty=$(git status --porcelain 2>/dev/null)
     if [[ -n $dirty ]]; then
-      echo "${gray}git(${green}${branch} ${yellow}*${gray})"
+      echo "${gray}git(${green}${branch} ${yellow}*${gray}) "
     else
-      echo "${gray}git(${green}${branch}${gray})"
+      echo "${gray}git(${green}${branch}${gray}) "
     fi
   fi
 }
-PROMPT="${cyan}%~${reset_color} $(parse_git_branch) ${pink}$ ${reset_color}"
+setopt PROMPT_SUBST
+PROMPT='${cyan}%~${reset_color} $(parse_git_branch)${pink}$ ${reset_color}'
 
 export EDITOR='nvim'
 
