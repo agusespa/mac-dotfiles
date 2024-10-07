@@ -37,6 +37,8 @@ lspconfig.bashls.setup({
   filetypes = { "sh" },
 })
 lspconfig.sqlls.setup({})
+lspconfig.htmx.setup({})
+lspconfig.templ.setup({})
 lspconfig.lemminx.setup({
   settings = {
     xml = {
