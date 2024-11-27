@@ -122,3 +122,19 @@ cmp.setup({
 --   exclude_filetypes = { "TelescopePrompt", "NvimTree" },
 --   log_file_path = nil, -- absolute path to Tabnine log file
 -- })
+
+local util = require 'lspconfig.util'
+local root_files = {
+  '.shopifyignore',
+  '.theme-check.yml',
+  '.theme-check.yaml',
+  'shopify.theme.toml',
+}
+lspconfig.shopify_theme_ls.setup({cmd = {
+      'shopify',
+      'theme',
+      'language-server',
+    },
+    filetypes = { 'liquid' },
+    root_dir = util.root_pattern(unpack(root_files))
+  })
