@@ -1,0 +1,10 @@
+mouse-hide-while-typing
+background = 000000
+
+theme = catppuccin-mocha
+
+font-size = 18
+font-family = "SF Mono"
+font-family-bold = "SF Mono Medium"
+font-family-italic = "SF Mono Regular Italic"
+font-family-bold-italic = "SF Mono Medium Italic"
