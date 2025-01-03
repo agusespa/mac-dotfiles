@@ -1,10 +1,13 @@
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = false
 mouse-hide-while-typing
-background = 000000
 
 theme = catppuccin-mocha
+background = 000000
 
 font-size = 18
-font-family = "SF Mono"
-font-family-bold = "SF Mono Medium"
-font-family-italic = "SF Mono Regular Italic"
-font-family-bold-italic = "SF Mono Medium Italic"
+font-family = SF Mono
+font-family-bold = SF Mono Medium
+font-family-italic = SF Mono Regular Italic
+font-family-bold-italic = SF Mono Medium Italic
