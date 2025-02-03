@@ -1,0 +1,17 @@
+name: espif
+root: ~/Code/esp32
+
+windows:
+  - editor:
+      layout: f802,222x55,0,0{67x55,0,0,29,154x55,68,0,31}
+      panes:
+        - . $HOME/esp/esp-idf/export.sh
+        - nvim .
+  - files:
+      panes:
+        - lf
+  - terms:
+      layout: even-horizontal
+      panes:
+        - 
+        - 

@@ -31,6 +31,7 @@ lspconfig.gopls.setup({})
 lspconfig.golangci_lint_ls.setup({})
 lspconfig.bufls.setup({})
 lspconfig.jdtls.setup({})
+lspconfig.kotlin_language_server.setup({})
 lspconfig.angularls.setup({})
 lspconfig.svelte.setup({})
 lspconfig.bashls.setup({
@@ -112,16 +113,6 @@ cmp.setup({
     { name = 'buffer' },
   })
 })
-
--- require('tabnine').setup({
---   disable_auto_comment = true,
---   accept_keymap = "<CR>",
---   dismiss_keymap = "<Left>",
---   debounce_ms = 800,
---   suggestion_color = { gui = "#808080", cterm = 244 },
---   exclude_filetypes = { "TelescopePrompt", "NvimTree" },
---   log_file_path = nil, -- absolute path to Tabnine log file
--- })
 
 local util = require 'lspconfig.util'
 local root_files = {
