@@ -1,5 +1,5 @@
-name: espif
-root: ~/Code/esp32
+name: esp32 IDF
+root: ~/Code/esp-idf
 
 windows:
   - editor:
