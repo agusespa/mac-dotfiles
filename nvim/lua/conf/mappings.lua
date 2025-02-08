@@ -41,12 +41,16 @@ end
 -- LSPs
 vim.keymap.set("n", '<leader>r', require('telescope.builtin').lsp_references)
 vim.keymap.set('n', '<leader>d', ':Telescope diagnostics<CR>', default_opts)
-vim.keymap.set("n", 'gd', vim.lsp.buf.definition)
 vim.keymap.set("n", 'gt', vim.lsp.buf.type_definition)
 vim.keymap.set("n", 'sd', vim.lsp.buf.hover)
 vim.keymap.set('n', 'sf', vim.diagnostic.open_float)
 vim.keymap.set("n", 'ca', vim.lsp.buf.code_action)
 vim.keymap.set("n", 'cr', vim.lsp.buf.rename)
+vim.keymap.set("n", 'gd', vim.lsp.buf.definition)
+
+-- Quickfix list
+vim.keymap.set('n', 'cc', ':cclose<CR>', default_opts)
+vim.keymap.set('n', 'co', ':copen<CR>', default_opts)
 
 -- Telescope
 local builtin = require('telescope.builtin')
