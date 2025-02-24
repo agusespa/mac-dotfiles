@@ -11,6 +11,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 export PATH="$PATH:$HOME/Library/Android/sdk/tools"
 export PATH="$PATH:$HOME/Code/go-lib/bin"
+export PATH="$PATH:$HOME/Code/tools/cli/mux"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
@@ -23,6 +24,5 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
 eval "$(jenv init -)"
 
-alias mux="tmuxinator"
 alias la="ls -A"
 alias ll="ls -l"
