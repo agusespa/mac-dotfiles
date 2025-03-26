@@ -1,11 +1,11 @@
-name: temp
-root: ~/Code
+name: Kronans Extras
+root: ~/Code/kronans/kronans-apotek-b2b-extras
 
 windows:
   - editor:
       layout: f802,222x55,0,0{67x55,0,0,29,154x55,68,0,31}
       panes:
-        - 
+        - nvm use --lts
         - nvim .
   - files:
       panes:
