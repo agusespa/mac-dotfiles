@@ -26,10 +26,10 @@ lspconfig.clangd.setup({
   filetypes = { "c", "cpp" },
 })
 lspconfig.omnisharp.setup({})
-lspconfig.tsserver.setup({})
+lspconfig.ts_ls.setup({})
 lspconfig.gopls.setup({})
 lspconfig.golangci_lint_ls.setup({})
-lspconfig.bufls.setup({})
+lspconfig.buf_ls.setup({})
 lspconfig.jdtls.setup({})
 lspconfig.kotlin_language_server.setup({})
 lspconfig.angularls.setup({})
@@ -121,11 +121,12 @@ local root_files = {
   '.theme-check.yaml',
   'shopify.theme.toml',
 }
-lspconfig.shopify_theme_ls.setup({cmd = {
-      'shopify',
-      'theme',
-      'language-server',
-    },
-    filetypes = { 'liquid' },
-    root_dir = util.root_pattern(unpack(root_files))
-  })
+lspconfig.shopify_theme_ls.setup({
+  cmd = {
+    'shopify',
+    'theme',
+    'language-server',
+  },
+  filetypes = { 'liquid' },
+  root_dir = util.root_pattern(unpack(root_files))
+})

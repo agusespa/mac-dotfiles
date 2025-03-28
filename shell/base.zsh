@@ -12,17 +12,14 @@ export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 export PATH="$PATH:$HOME/Library/Android/sdk/tools"
 export PATH="$PATH:$HOME/Code/go-lib/bin"
 export PATH="$PATH:$HOME/Code/cli-tools/mux"
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$ANDROID_HOME/emulator"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
 export C_INCLUDE_PATH="/opt/homebrew/include/glib-2.0"
 export GOPATH="$HOME/Code/go-lib"
 export CLASSPATH="/Library/Saxon/saxon-he-12.4.jar"
+export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/corretto-21.0.6/Contents/Home"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH="$PATH:$ANDROID_HOME/emulator"
-export PATH="$PATH:$ANDROID_HOME/platform-tools"
-
-eval "$(jenv init -)"
 
 alias la="ls -A"
 alias ll="ls -l"

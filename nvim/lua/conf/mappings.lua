@@ -23,7 +23,7 @@ function FormatCode()
   if ft == "typescript" or ft == "typescriptreact" or ft == "javascript" or ft == "tsx" or ft == "svelte" or ft == "html" or ft == "css" or ft == "scss" or ft == "jsx" or ft == "jsonc" or ft == "json" then
     vim.cmd(':Prettier')
     print("Code formatted with Prettier")
-  elseif ft == 'cpp' or ft == "java" or ft == "c" or ft == "proto" then
+  elseif ft == 'cpp' or ft == "c" or ft == "proto" then
     vim.cmd(':ClangFormat')
     print("Code formatted with ClangFormat")
   elseif ft == "dart" then
