@@ -20,6 +20,7 @@ export GOPATH="$HOME/Code/go-lib"
 export CLASSPATH="/Library/Saxon/saxon-he-12.4.jar"
 export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/corretto-21.0.6/Contents/Home"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
+export TMUXINATOR_CONFIG="$HOME/Code/tmux-projects"
 
 alias la="ls -A"
 alias ll="ls -l"
