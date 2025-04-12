@@ -9,7 +9,7 @@ windows:
         - nvim .
   - files:
       panes:
-        - lf
+        - yazi
   - editor2:
       layout: f802,222x55,0,0{67x55,0,0,29,154x55,68,0,31}
       panes:
