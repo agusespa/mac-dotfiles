@@ -1,14 +1,26 @@
-vim.cmd([[
-  highlight StatusLine          guibg=#282c34 guifg=#abb2bf gui=NONE  " Default (gray)
-  highlight StatusLineGit       guibg=#282c34 guifg=#abb2bf gui=NONE  " Git branch (gray)
-  highlight StatusLineGitAdd    guibg=#282c34 guifg=#98c379 gui=NONE  " Green (+)
-  highlight StatusLineGitChange guibg=#282c34 guifg=#e5c07b gui=NONE  " Yellow (~)
-  highlight StatusLineGitDel    guibg=#282c34 guifg=#e06c75 gui=NONE  " Red (-)
-  highlight StatusLineError     guibg=#282c34 guifg=#e06c75 gui=bold  " Errors (red)
-  highlight StatusLineWarning   guibg=#282c34 guifg=#e5c07b gui=NONE  " Warnings (yellow)
-  highlight StatusLineModified  guibg=#282c34 guifg=#d19a66 gui=NONE  " Modified [+] (orange)
-  highlight StatusLineBranchMod guibg=#282c34 guifg=#e5c07b gui=NONE  " Modified branch (yellow)
-]])
+local colors = require('conf.colorscheme').colors
+
+vim.cmd(string.format([[
+  highlight StatusLine          guibg=%s guifg=%s gui=NONE
+  highlight StatusLineGit       guibg=%s guifg=%s gui=NONE
+  highlight StatusLineGitAdd    guibg=%s guifg=%s gui=NONE
+  highlight StatusLineGitChange guibg=%s guifg=%s gui=NONE
+  highlight StatusLineGitDel    guibg=%s guifg=%s gui=NONE
+  highlight StatusLineError     guibg=%s guifg=%s gui=NONE
+  highlight StatusLineWarning   guibg=%s guifg=%s gui=NONE
+  highlight StatusLineModified  guibg=%s guifg=%s gui=NONE
+  highlight StatusLineBranchMod guibg=%s guifg=%s gui=NONE
+]],
+  colors.bg_light, colors.fg,        -- StatusLine
+  colors.bg_light, colors.fg,        -- StatusLineGit
+  colors.bg_light, colors.green_hi,  -- StatusLineGitAdd
+  colors.bg_light, colors.yellow_hi, -- StatusLineGitChange
+  colors.bg_light, colors.red_hi,    -- StatusLineGitDel
+  colors.bg_light, colors.red_hi,    -- StatusLineError
+  colors.bg_light, colors.yellow_hi, -- StatusLineWarning
+  colors.bg_light, colors.yellow_hi, -- StatusLineModified
+  colors.bg_light, colors.yellow_hi  -- StatusLineBranchMod
+))
 
 _G.statusline = function()
   local filepath = "%#StatusLine#%f%*"

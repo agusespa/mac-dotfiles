@@ -58,12 +58,8 @@ vim.opt.spelloptions = "camel"
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
-vim.cmd([[
-  hi Normal guibg=#000000 ctermbg=0
-  hi NonText guibg=#000000 ctermbg=0
-  hi NormalNC guibg=#000000 ctermbg=0
-]])
 vim.o.background = "dark"
+require('conf.colorscheme').setup()
 
 require 'treesitter-context'.setup {
     enable = false,           -- Enable this plugin (Can be enabled/disabled later via commands)
