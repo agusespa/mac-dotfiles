@@ -20,7 +20,21 @@ lspconfig.cssls.setup({})
 lspconfig.jsonls.setup({})
 lspconfig.pyright.setup({})
 lspconfig.html.setup({})
-lspconfig.lua_ls.setup({})
+lspconfig.lua_ls.setup({
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      },
+      workspace = {
+        library = {
+          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+          [vim.fn.stdpath('config') .. '/lua'] = true
+        }
+      }
+    }
+  }
+})
 lspconfig.yamlls.setup({})
 lspconfig.clangd.setup({
   filetypes = { "c", "cpp" },

@@ -45,9 +45,16 @@ vim.opt.incsearch = true
 vim.opt.wrap = true
 --  Indents word-wrapped lines as much as the 'parent' line
 vim.opt.breakindent = true
---  Ensures word-wrap does not split words
-vim.opt.formatoptions = l
 vim.opt.lbr = true
+
+vim.opt.formatoptions = vim.opt.formatoptions
+    - "a" -- Disable auto-formatting (let LSP handle it)
+    - "t" -- Disable text wrapping (let LSP/editor handle soft-wrapping)
+    + "c" -- Wrap comments (respects 'textwidth' in comments)
+    + "q" -- Allow formatting comments with `gq`
+    + "j" -- Remove comment leaders when joining lines
+    + "n" -- Recognize numbered lists
+    + "b" -- Break only at whitespace (prevents mid-word splits)
 
 vim.opt.signcolumn = 'yes'
 
