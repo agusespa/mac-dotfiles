@@ -42,7 +42,13 @@ end
 vim.keymap.set("n", '<leader>r', require('telescope.builtin').lsp_references)
 vim.keymap.set('n', '<leader>d', ':Telescope diagnostics<CR>', default_opts)
 vim.keymap.set("n", 'gt', vim.lsp.buf.type_definition)
-vim.keymap.set("n", 'sd', vim.lsp.buf.hover)
+-- vim.keymap.set("n", 'sd', vim.lsp.buf.hover)
+vim.keymap.set('n', 'sd', function()
+  vim.lsp.buf.hover({
+    border = 'single',
+    focusable = false,
+  })
+end, {desc = 'Show documentation'})
 vim.keymap.set('n', 'sf', vim.diagnostic.open_float)
 vim.keymap.set("n", 'ca', vim.lsp.buf.code_action)
 vim.keymap.set("n", 'cr', vim.lsp.buf.rename)
