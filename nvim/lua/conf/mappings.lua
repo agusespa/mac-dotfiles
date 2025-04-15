@@ -28,7 +28,7 @@ function FormatCode()
     print("Code formatted with ClangFormat")
   elseif ft == "dart" then
     vim.cmd(':DartFmt')
-    print("Code formatted with ClangFormat")
+    print("Code formatted with DartFormat")
   elseif ft == "python" then
     vim.cmd(':Black')
     print("Code formatted with Black")

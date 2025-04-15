@@ -4,7 +4,6 @@ cursor-style-blink = false
 cursor-invert-fg-bg = true
 mouse-hide-while-typing
 
-theme = catppuccin-mocha
 background = 000000
 
 font-size = 18

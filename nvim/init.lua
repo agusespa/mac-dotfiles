@@ -2,8 +2,7 @@ require("conf.plugins")
 require("conf.mappings")
 require("conf.telescope")
 require("conf.lsp")
-require("conf.lualine")
--- require("conf.bufferline")
+require("conf.statusline")
 
 vim.opt.termguicolors = true
 
@@ -59,51 +58,12 @@ vim.opt.spelloptions = "camel"
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
---  Appearence
-require("catppuccin").setup({
-    flavour = "mocha",
-    transparent_background = true,
-    show_end_of_buffer = false,
-    dim_inactive = {
-        enabled = false,
-        shade = "dark",
-        percentage = 0.15,
-    },
-    no_italic = false,
-    no_bold = false,
-    styles = {
-        comments = { "italic" },
-        conditionals = { "italic" },
-        loops = {},
-        functions = {},
-        keywords = {},
-        strings = {},
-        variables = {},
-        numbers = {},
-        booleans = {},
-        properties = {},
-        types = {},
-        operators = {},
-    },
-    color_overrides = {},
-    custom_highlights = {},
-    integrations = {
-        cmp = true,
-        gitsigns = true,
-        nvimtree = true,
-        telescope = {
-            enabled = true,
-        },
-        harpoon = true,
-        treesitter = true,
-    },
-})
-
-vim.cmd("colorscheme catppuccin")
-
-require("ibl").setup {
-    scope = { enabled = false },
-}
+vim.cmd([[
+  hi Normal guibg=#000000 ctermbg=0
+  hi NonText guibg=#000000 ctermbg=0
+  hi NormalNC guibg=#000000 ctermbg=0
+]])
+vim.o.background = "dark"
 
 require 'treesitter-context'.setup {
     enable = false,           -- Enable this plugin (Can be enabled/disabled later via commands)
@@ -118,9 +78,3 @@ require 'treesitter-context'.setup {
     separator = nil,
     zindex = 20, -- The Z-index of the context window
 }
-
--- vim.api.nvim_create_autocmd("VimEnter", {
---     callback = function()
---         vim.cmd("TagbarToggle")
---     end,
--- })

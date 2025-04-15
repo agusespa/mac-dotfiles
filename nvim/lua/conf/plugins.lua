@@ -15,7 +15,6 @@ require('packer').startup(function(use)
         { 'hrsh7th/cmp-path' },
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'hrsh7th/cmp-cmdline' },
-        -- { 'codota/tabnine-nvim',         run = "./dl_binaries.sh" },
         -- Snippets
         { "L3MON4D3/LuaSnip" },
         { "rafamadriz/friendly-snippets" },
@@ -23,12 +22,8 @@ require('packer').startup(function(use)
     }
 
     -- General plugins
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
     use "nvim-lua/plenary.nvim"
-    -- use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
+    use "nvim-tree/nvim-web-devicons"
 
     -- Utility plugins
     use {
@@ -37,16 +32,14 @@ require('packer').startup(function(use)
             pcall(require('nvim-treesitter.install').update { with_sync = true })
         end,
     }
-    use 'nvim-treesitter/nvim-treesitter-context'
     use {
         'nvim-treesitter/nvim-treesitter-textobjects',
         after = 'nvim-treesitter',
     }
-    use "lukas-reineke/indent-blankline.nvim"
+    use 'nvim-treesitter/nvim-treesitter-context'
     use 'prettier/vim-prettier'
     use 'psf/black'
     use 'rhysd/vim-clang-format'
-    use 'dart-lang/dart-vim-plugin'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-commentary'
     use 'mbbill/undotree'
@@ -60,11 +53,8 @@ require('packer').startup(function(use)
     use {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
-        requires = { { "nvim-lua/plenary.nvim" } }
     }
     use 'fatih/vim-go'
     use 'vim-test/vim-test'
-
-    -- Appearence plugins
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use 'tjdevries/express_line.nvim'
 end)
