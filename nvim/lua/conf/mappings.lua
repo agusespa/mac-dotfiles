@@ -36,6 +36,7 @@ function FormatCode()
     vim.lsp.buf.format()
     print("Code formatted with LspFormat")
   end
+  vim.diagnostic.show(nil, 0)
 end
 
 -- LSPs
@@ -48,7 +49,7 @@ vim.keymap.set('n', 'sd', function()
     border = 'single',
     focusable = false,
   })
-end, {desc = 'Show documentation'})
+end, { desc = 'Show documentation' })
 vim.keymap.set('n', 'sf', vim.diagnostic.open_float)
 vim.keymap.set("n", 'ca', vim.lsp.buf.code_action)
 vim.keymap.set("n", 'cr', vim.lsp.buf.rename)
