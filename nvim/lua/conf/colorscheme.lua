@@ -3,16 +3,17 @@ local M = {}
 M.colors = {
   bg        = "#000000",
   bg_light  = "#1e2030",
+  bg_slate  = "#2c323c",
   fg        = "#abb2bf",
-  red_hi    = "#e06c75",
+  red_hi    = "#d22d3a",
   green_hi  = "#98c379",
-  yellow_hi = "#e5c07b",
+  yellow_hi = "#e6b800",
   gray      = "#5c6370",
   green     = "#8fbf9f",
   blue      = "#5a9b9f",
   purple    = "#b28fb8",
-  violet    = "#9a8dbb",
   orange    = "#d99e8f",
+  violet    = "#9a8dbb",
 }
 
 function M.setup()
@@ -119,15 +120,15 @@ function M.setup()
   vim.api.nvim_set_hl(0, "String", { fg = M.colors.green })
   vim.api.nvim_set_hl(0, "@string", { fg = M.colors.green })
   vim.api.nvim_set_hl(0, "@string.special", { link = "@string" })
-  vim.api.nvim_set_hl(0, "@string.escape", { fg = M.colors.gray })
+  vim.api.nvim_set_hl(0, "@string.escape", { fg = M.colors.blue })
   vim.api.nvim_set_hl(0, "@character", { fg = M.colors.green })
   vim.api.nvim_set_hl(0, "Character", { fg = M.colors.green })
   vim.api.nvim_set_hl(0, "@character", { fg = M.colors.green })
 
   -- Special & markup
-  vim.api.nvim_set_hl(0, "Special", { fg = M.colors.blue })
+  vim.api.nvim_set_hl(0, "Special", { fg = M.colors.fg })
   vim.api.nvim_set_hl(0, "Todo", { fg = M.colors.yellow_hi, bold = true })
-  vim.api.nvim_set_hl(0, "Title", { fg = M.colors.blue, bold = true })
+  vim.api.nvim_set_hl(0, "Title", { fg = M.colors.fg, bold = true })
   vim.api.nvim_set_hl(0, "Tag", { fg = M.colors.blue })
   vim.api.nvim_set_hl(0, "@tag", { fg = M.colors.blue })
   vim.api.nvim_set_hl(0, "@tag.attribute", { link = "@tag" })
@@ -159,16 +160,18 @@ function M.setup()
   vim.api.nvim_set_hl(0, "DiffText", { fg = M.colors.blue, bg = "#1c2230" })
 
   -- LSP
-  vim.api.nvim_set_hl(0, "LspReferenceText", { bg = "#2c323c" })
-  vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = "#2c323c" })
-  vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = "#2c323c" })
+  vim.api.nvim_set_hl(0, "LspReferenceText", { bg = M.colors.bg_slate })
+  vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = M.colors.bg_slate })
+  vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = M.colors.bg_slate })
   vim.api.nvim_set_hl(0, "LspCodeLens", { fg = M.colors.gray, italic = true })
   vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { fg = M.colors.yellow_hi, bold = true })
 
   -- UI elements
-  vim.api.nvim_set_hl(0, "LineNr", { fg = M.colors.gray })
+  vim.api.nvim_set_hl(0, "CmpNormal", { bg = M.colors.bg_light })
   vim.api.nvim_set_hl(0, "CursorLine", { bg = "#111111" })
   vim.api.nvim_set_hl(0, "CursorLineNr", { fg = M.colors.fg })
+  vim.api.nvim_set_hl(0, "ColorColumn", { bg = M.colors.bg_slate })
+  vim.api.nvim_set_hl(0, "LineNr", { fg = M.colors.gray })
 
   -- Messages
   vim.api.nvim_set_hl(0, "ErrorMsg", { fg = M.colors.red_hi })

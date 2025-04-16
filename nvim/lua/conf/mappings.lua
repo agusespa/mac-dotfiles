@@ -1,4 +1,4 @@
--- useage notes:
+-- usage notes:
 -- use leader for actions that use built in or plugin functions
 -- use letters for actions that are closest to the code editing
 -- use 'g' + {char} for go to actions

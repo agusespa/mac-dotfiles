@@ -70,12 +70,6 @@ lspconfig.lemminx.setup({
   }
 })
 
-require('nvim-treesitter.configs').setup {
-  ensure_installed = { 'lua', 'python', 'java', 'c', 'cpp', 'go', 'gomod', 'gosum', 'typescript', 'svelte', 'tsx', 'css', 'html', 'scss', 'javascript', 'json', 'vimdoc', 'gitignore' },
-}
-
-vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#1e1e2e" })
-
 vim.diagnostic.config({
   virtual_text = true,
   severity_sort = true,

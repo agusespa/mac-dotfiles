@@ -29,9 +29,7 @@ require('packer').startup(function(use)
     -- Utility plugins
     use {
         'nvim-treesitter/nvim-treesitter',
-        run = function()
-            pcall(require('nvim-treesitter.install').update { with_sync = true })
-        end,
+        run = ':TSUpdate'
     }
     use {
         'nvim-treesitter/nvim-treesitter-textobjects',
