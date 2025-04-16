@@ -148,6 +148,26 @@ function M.setup()
   vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", { undercurl = true, sp = M.colors.blue })
   vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", { undercurl = true, sp = M.colors.blue })
 
+  -- Language overrides
+  -- Java
+  vim.api.nvim_set_hl(0, "@keyword.java", { link = "@keyword" })
+  vim.api.nvim_set_hl(0, "@lsp.type.modifier.java", { link = "@keyword" })
+  vim.api.nvim_set_hl(0, "@keyword.type.java", { link = "@type" })
+  vim.api.nvim_set_hl(0, "@type.java", { link = "@type" })
+  vim.api.nvim_set_hl(0, "@lsp.type.class.java", { link = "@type" })
+  vim.api.nvim_set_hl(0, "@lsp.mod.public.java", { link = "@keyword" })
+  vim.api.nvim_set_hl(0, "@lsp.mod.readonly.java", { link = "@keyword" })
+  vim.api.nvim_set_hl(0, "@lsp.typemod.class.public.java", { link = "@type" })
+  vim.api.nvim_set_hl(0, "@lsp.typemod.class.readonly.java", { link = "@type" })
+  vim.api.nvim_set_hl(0, "@lsp.typemod.interface.public.java", { link = "@type" })
+  vim.api.nvim_set_hl(0, "@lsp.mod.public.java", { link = "@type" })
+  -- tsx
+  vim.api.nvim_set_hl(0, "@variable.tsx", { fg = M.colors.fg })
+  vim.api.nvim_set_hl(0, "@type.tsx", { fg = M.colors.fg })
+  vim.api.nvim_set_hl(0, "@type.builtin.tsx", { fg = M.colors.blue })
+  vim.api.nvim_set_hl(0, "@tag.tsx", { fg = M.colors.fg })
+  vim.api.nvim_set_hl(0, "@tag.attribute.tsx", { fg = M.colors.fg })
+
   -- Git signs
   vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = M.colors.green_hi })
   vim.api.nvim_set_hl(0, "GitSignsChange", { fg = M.colors.yellow_hi })
