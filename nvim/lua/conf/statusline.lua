@@ -1,31 +1,28 @@
 local colors = require('conf.colorscheme').colors
 
-vim.api.nvim_set_hl(0, 'StatusLine',
-  { bg = colors.bg_light, fg = colors.fg, bold = false, italic = false, underline = false, strikethrough = false })
-vim.api.nvim_set_hl(0, 'StatusLineGit',
-  { bg = colors.bg_light, fg = colors.fg, bold = false, italic = false, underline = false, strikethrough = false })
-vim.api.nvim_set_hl(0, 'StatusLineGitAdd',
-  { bg = colors.bg_light, fg = colors.green_hi, bold = false, italic = false, underline = false, strikethrough = false })
-vim.api.nvim_set_hl(0, 'StatusLineGitChange',
-  { bg = colors.bg_light, fg = colors.yellow_hi, bold = false, italic = false, underline = false, strikethrough = false })
-vim.api.nvim_set_hl(0, 'StatusLineGitDel',
-  { bg = colors.bg_light, fg = colors.red_hi, bold = false, italic = false, underline = false, strikethrough = false })
-vim.api.nvim_set_hl(0, 'StatusLineError',
-  { bg = colors.bg_light, fg = colors.red_hi, bold = false, italic = false, underline = false, strikethrough = false })
-vim.api.nvim_set_hl(0, 'StatusLineWarning',
-  { bg = colors.bg_light, fg = colors.yellow_hi, bold = false, italic = false, underline = false, strikethrough = false })
-vim.api.nvim_set_hl(0, 'StatusLineModified',
-  { bg = colors.bg_light, fg = colors.yellow_hi, bold = false, italic = false, underline = false, strikethrough = false })
-vim.api.nvim_set_hl(0, 'StatusLineBranchMod',
-  { bg = colors.bg_light, fg = colors.yellow_hi, bold = false, italic = false, underline = false, strikethrough = false })
+vim.api.nvim_set_hl(0, 'StatusLine', { bg = colors.bg_light, fg = colors.fg })
+vim.api.nvim_set_hl(0, 'StatusLineGit', { bg = colors.bg_light, fg = colors.fg })
+vim.api.nvim_set_hl(0, 'StatusLineGitAdd', { bg = colors.bg_light, fg = colors.green_hi })
+vim.api.nvim_set_hl(0, 'StatusLineGitChange', { bg = colors.bg_light, fg = colors.yellow_hi })
+vim.api.nvim_set_hl(0, 'StatusLineGitDel', { bg = colors.bg_light, fg = colors.red_hi })
+vim.api.nvim_set_hl(0, 'StatusLineError', { bg = colors.bg_light, fg = colors.red_hi })
+vim.api.nvim_set_hl(0, 'StatusLineWarning', { bg = colors.bg_light, fg = colors.yellow_hi })
+vim.api.nvim_set_hl(0, 'StatusLineModified', { bg = colors.bg_light, fg = colors.yellow_hi })
+vim.api.nvim_set_hl(0, 'StatusLineBranchMod', { bg = colors.bg_light, fg = colors.yellow_hi })
 
 _G.statusline = function()
-  local filepath = "%#StatusLine#%f%*"
-  local modified = "%#StatusLineModified#%m%*" -- [+] (orange)
-  local filetype = "%y"                        -- Filetype
-  local linecol = "%(%l:%c%)"                  -- Line:Column
-  local percentage = "%p%%"                    -- Percentage
-  local align_right = "%="                     -- Right-align
+  local function simple_truncate(path, max_length)
+    if #path <= max_length then return path end
+    return "…" .. path:sub(-max_length + 1)
+  end
+
+  local full_path = vim.fn.expand('%:p:~')
+  local filepath = "%#StatusLine#" .. simple_truncate(full_path, 80) .. "%*"
+  local modified = "%#StatusLineModified#%m%*"
+  local filetype = "%y"
+  local linecol = "%(%l:%c%)"
+  local percentage = "%p%%"
+  local align_right = "%="
 
   -- Git branch + diff stats
   local git_info = ""
@@ -37,44 +34,61 @@ _G.statusline = function()
     handle:close()
 
     if branch ~= "" then
-      -- Check if branch has any changes
-      local branch_has_changes = os.execute("git diff --quiet 2>/dev/null") ~= 0
-      local branch_display = branch
+      -- Check if repo has any changes (staged, unstaged, untracked)
+      local branch_has_changes = false
+      local status_handle = io.popen("git status --porcelain 2>/dev/null")
+      if status_handle then
+        local status_output = status_handle:read("*a")
+        status_handle:close()
+        branch_has_changes = status_output ~= ""
+      end
 
-      -- Add yellow asterisk if branch has changes
+      local branch_display = branch
       if branch_has_changes then
         branch_display = branch .. "%#StatusLineBranchMod#*%#StatusLine#"
       end
 
-      -- Check if current file has changes (only show stats for current file)
-      local file_has_changes = false
       local current_file = vim.fn.expand('%:p')
 
-      if current_file ~= "" then
-        file_has_changes = os.execute("git diff --quiet -- '" .. current_file .. "' 2>/dev/null") ~= 0
+      local function get_git_diff_stats(file)
+        local function parse_numstat(cmd)
+          local h = io.popen(cmd)
+          if not h then return 0, 0 end
+          local adds, subs = 0, 0
+          for line in h:lines() do
+            local a, s = line:match("^(%d+)%s+(%d+)")
+            if a and s then
+              adds = adds + tonumber(a)
+              subs = subs + tonumber(s)
+            end
+          end
+          h:close()
+          return adds, subs
+        end
+
+        local add_cached, sub_cached = parse_numstat("git diff --numstat --cached -- '" .. file .. "' 2>/dev/null")
+        local add_working, sub_working = parse_numstat("git diff --numstat -- '" .. file .. "' 2>/dev/null")
+
+        local total_add = add_cached + add_working
+        local total_sub = sub_cached + sub_working
+
+        if total_add + total_sub == 0 then
+          return ""
+        end
+
+        return string.format("+%d ~%d -%d", total_add, total_add + total_sub, total_sub)
       end
 
-      if file_has_changes then
-        -- Only compute diff stats for the current file if it has changes
-        local diff_cmd = "git diff --numstat -- '" .. current_file ..
-            "' | awk '{ adds+=$1; subs+=$2 } END { printf \"+%d ~%d -%d\", adds, adds+subs, subs }' 2>/dev/null"
+      local diff_stats = get_git_diff_stats(current_file)
 
-        local diff_handle = io.popen(diff_cmd)
-        if diff_handle then
-          local diff_stats = diff_handle:read("*a")
-          diff_handle:close()
+      if diff_stats ~= "" then
+        diff_stats = diff_stats
+            :gsub("(%+%d+)", "%%#StatusLineGitAdd#%1%%*")
+            :gsub("(%~%d+)", "%%#StatusLineGitChange#%1%%*")
+            :gsub("(%-%d+)", "%%#StatusLineGitDel#%1%%*")
 
-          if diff_stats ~= "" then
-            -- Colorize +/~/-
-            diff_stats = diff_stats:gsub("(%+%d+)", "%%#StatusLineGitAdd#%1%%*")
-                :gsub("(%~%d+)", "%%#StatusLineGitChange#%1%%*")
-                :gsub("(%-%d+)", "%%#StatusLineGitDel#%1%%*")
-
-            git_info = "%#StatusLineGit#[" .. branch_display .. "%#StatusLineGit# " .. diff_stats .. "]%*"
-          end
-        end
+        git_info = "%#StatusLineGit#[" .. branch_display .. "%#StatusLineGit# " .. diff_stats .. "]%*"
       else
-        -- No changes in this file - just show branch
         git_info = "%#StatusLineGit#[" .. branch_display .. "]%*"
       end
     end
@@ -94,7 +108,6 @@ _G.statusline = function()
     end
   end
 
-  -- Combine all parts
   return table.concat({
     git_info,
     filepath,
