@@ -1,26 +1,23 @@
 local colors = require('conf.colorscheme').colors
 
-vim.cmd(string.format([[
-  highlight StatusLine          guibg=%s guifg=%s gui=NONE
-  highlight StatusLineGit       guibg=%s guifg=%s gui=NONE
-  highlight StatusLineGitAdd    guibg=%s guifg=%s gui=NONE
-  highlight StatusLineGitChange guibg=%s guifg=%s gui=NONE
-  highlight StatusLineGitDel    guibg=%s guifg=%s gui=NONE
-  highlight StatusLineError     guibg=%s guifg=%s gui=NONE
-  highlight StatusLineWarning   guibg=%s guifg=%s gui=NONE
-  highlight StatusLineModified  guibg=%s guifg=%s gui=NONE
-  highlight StatusLineBranchMod guibg=%s guifg=%s gui=NONE
-]],
-  colors.bg_light, colors.fg,        -- StatusLine
-  colors.bg_light, colors.fg,        -- StatusLineGit
-  colors.bg_light, colors.green_hi,  -- StatusLineGitAdd
-  colors.bg_light, colors.yellow_hi, -- StatusLineGitChange
-  colors.bg_light, colors.red_hi,    -- StatusLineGitDel
-  colors.bg_light, colors.red_hi,    -- StatusLineError
-  colors.bg_light, colors.yellow_hi, -- StatusLineWarning
-  colors.bg_light, colors.yellow_hi, -- StatusLineModified
-  colors.bg_light, colors.yellow_hi  -- StatusLineBranchMod
-))
+vim.api.nvim_set_hl(0, 'StatusLine',
+  { bg = colors.bg_light, fg = colors.fg, bold = false, italic = false, underline = false, strikethrough = false })
+vim.api.nvim_set_hl(0, 'StatusLineGit',
+  { bg = colors.bg_light, fg = colors.fg, bold = false, italic = false, underline = false, strikethrough = false })
+vim.api.nvim_set_hl(0, 'StatusLineGitAdd',
+  { bg = colors.bg_light, fg = colors.green_hi, bold = false, italic = false, underline = false, strikethrough = false })
+vim.api.nvim_set_hl(0, 'StatusLineGitChange',
+  { bg = colors.bg_light, fg = colors.yellow_hi, bold = false, italic = false, underline = false, strikethrough = false })
+vim.api.nvim_set_hl(0, 'StatusLineGitDel',
+  { bg = colors.bg_light, fg = colors.red_hi, bold = false, italic = false, underline = false, strikethrough = false })
+vim.api.nvim_set_hl(0, 'StatusLineError',
+  { bg = colors.bg_light, fg = colors.red_hi, bold = false, italic = false, underline = false, strikethrough = false })
+vim.api.nvim_set_hl(0, 'StatusLineWarning',
+  { bg = colors.bg_light, fg = colors.yellow_hi, bold = false, italic = false, underline = false, strikethrough = false })
+vim.api.nvim_set_hl(0, 'StatusLineModified',
+  { bg = colors.bg_light, fg = colors.yellow_hi, bold = false, italic = false, underline = false, strikethrough = false })
+vim.api.nvim_set_hl(0, 'StatusLineBranchMod',
+  { bg = colors.bg_light, fg = colors.yellow_hi, bold = false, italic = false, underline = false, strikethrough = false })
 
 _G.statusline = function()
   local filepath = "%#StatusLine#%f%*"
