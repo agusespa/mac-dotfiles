@@ -1,6 +1,6 @@
 require("conf.plugins")
 require("conf.mappings")
-require("conf.telescope")
+require("conf.utils")
 require("conf.lsp")
 require("conf.statusline")
 

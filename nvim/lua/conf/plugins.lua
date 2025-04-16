@@ -1,4 +1,5 @@
 vim.cmd [[packadd packer.nvim]]
+
 require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
@@ -55,6 +56,4 @@ require('packer').startup(function(use)
         branch = "harpoon2",
     }
     use 'fatih/vim-go'
-    use 'vim-test/vim-test'
-    use 'tjdevries/express_line.nvim'
 end)
