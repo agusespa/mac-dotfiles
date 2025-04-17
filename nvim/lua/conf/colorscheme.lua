@@ -161,12 +161,16 @@ function M.setup()
   vim.api.nvim_set_hl(0, "@lsp.typemod.class.readonly.java", { link = "@type" })
   vim.api.nvim_set_hl(0, "@lsp.typemod.interface.public.java", { link = "@type" })
   vim.api.nvim_set_hl(0, "@lsp.mod.public.java", { link = "@type" })
-  -- tsx
-  vim.api.nvim_set_hl(0, "@variable.tsx", { fg = M.colors.fg })
-  vim.api.nvim_set_hl(0, "@type.tsx", { fg = M.colors.fg })
-  vim.api.nvim_set_hl(0, "@type.builtin.tsx", { fg = M.colors.blue })
-  vim.api.nvim_set_hl(0, "@tag.tsx", { fg = M.colors.fg })
-  vim.api.nvim_set_hl(0, "@tag.attribute.tsx", { fg = M.colors.fg })
+  -- Tsx
+  vim.api.nvim_set_hl(0, "@variable.tsx", { link = "@variable" })
+  vim.api.nvim_set_hl(0, "@type.tsx", { link = "@variable" })
+  vim.api.nvim_set_hl(0, "@type.builtin.tsx", { link = "@variable" })
+  vim.api.nvim_set_hl(0, "@tag.tsx", { link = "@variable" })
+  vim.api.nvim_set_hl(0, "@tag.attribute.tsx", { link = "@variable" })
+  -- Python
+  vim.api.nvim_set_hl(0, "@variable.python", { link = "@variable" })
+  vim.api.nvim_set_hl(0, "@function.call.python", { link = "@variable" })
+  vim.api.nvim_set_hl(0, "@function.builtin.python", { link = "@variable" })
 
   -- Git signs
   vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = M.colors.green_hi })
