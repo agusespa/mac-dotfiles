@@ -175,6 +175,8 @@ function M.setup()
   vim.api.nvim_set_hl(0, "@type.builtin.c", { fg = M.colors.purple })
   vim.api.nvim_set_hl(0, "@lsp.mod.defaultLibrary.c", { fg = M.colors.purple })
   vim.api.nvim_set_hl(0, "@lsp.typemod.type.defaultLibrary.c", { fg = M.colors.purple })
+  vim.api.nvim_set_hl(0, "@lsp.mod.readonly.c", { link = "@constant" })
+  vim.api.nvim_set_hl(0, "@lsp.typemod.variable.readonly.c", { link = "@constant" })
 
   -- Git signs
   vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = M.colors.green_hi })
