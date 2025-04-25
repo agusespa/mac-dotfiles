@@ -152,7 +152,7 @@ function M.setup()
   -- Java
   vim.api.nvim_set_hl(0, "@keyword.java", { link = "@keyword" })
   vim.api.nvim_set_hl(0, "@lsp.type.modifier.java", { link = "@keyword" })
-  vim.api.nvim_set_hl(0, "@keyword.type.java", { link = "@type" })
+  vim.api.nvim_set_hl(0, "@keyword.type.java", { link = "@keyword" })
   vim.api.nvim_set_hl(0, "@type.java", { link = "@type" })
   vim.api.nvim_set_hl(0, "@lsp.type.class.java", { link = "@type" })
   vim.api.nvim_set_hl(0, "@lsp.mod.public.java", { link = "@keyword" })
