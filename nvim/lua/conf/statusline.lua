@@ -1,14 +1,14 @@
 local colors = require('conf.colorscheme').colors
 
-vim.api.nvim_set_hl(0, 'StatusLine', { bg = colors.bg_light, fg = colors.fg })
-vim.api.nvim_set_hl(0, 'StatusLineGit', { bg = colors.bg_light, fg = colors.fg })
-vim.api.nvim_set_hl(0, 'StatusLineGitAdd', { bg = colors.bg_light, fg = colors.green_hi })
-vim.api.nvim_set_hl(0, 'StatusLineGitChange', { bg = colors.bg_light, fg = colors.yellow_hi })
-vim.api.nvim_set_hl(0, 'StatusLineGitDel', { bg = colors.bg_light, fg = colors.red_hi })
-vim.api.nvim_set_hl(0, 'StatusLineError', { bg = colors.bg_light, fg = colors.red_hi })
-vim.api.nvim_set_hl(0, 'StatusLineWarning', { bg = colors.bg_light, fg = colors.yellow_hi })
-vim.api.nvim_set_hl(0, 'StatusLineModified', { bg = colors.bg_light, fg = colors.yellow_hi })
-vim.api.nvim_set_hl(0, 'StatusLineBranchMod', { bg = colors.bg_light, fg = colors.yellow_hi })
+vim.api.nvim_set_hl(0, 'StatusLine', { bg = colors.bg_light, fg = colors.text })
+vim.api.nvim_set_hl(0, 'StatusLineGit', { bg = colors.bg_light, fg = colors.text })
+vim.api.nvim_set_hl(0, 'StatusLineGitAdd', { bg = colors.bg_light, fg = colors.green })
+vim.api.nvim_set_hl(0, 'StatusLineGitChange', { bg = colors.bg_light, fg = colors.yellow })
+vim.api.nvim_set_hl(0, 'StatusLineGitDel', { bg = colors.bg_light, fg = colors.red })
+vim.api.nvim_set_hl(0, 'StatusLineError', { bg = colors.bg_light, fg = colors.red })
+vim.api.nvim_set_hl(0, 'StatusLineWarning', { bg = colors.bg_light, fg = colors.yellow })
+vim.api.nvim_set_hl(0, 'StatusLineModified', { bg = colors.bg_light, fg = colors.yellow })
+vim.api.nvim_set_hl(0, 'StatusLineBranchMod', { bg = colors.bg_light, fg = colors.yellow })
 
 _G.statusline = function()
   local function simple_truncate(path, max_length)
