@@ -4,18 +4,19 @@ M.colors = {
   bg        = "#000000",
   bg_light  = "#1e2030",
   bg_slate  = "#2c323c",
-  red    = "#d22d3a",
-  green  = "#98c379",
-  yellow = "#e6b800",
+  red       = "#d22d3a",
+  green     = "#98c379",
+  yellow    = "#e6b800",
   gray      = "#5c6370",
 
   -- semantic groups
   text      = "#e2e4e9",
   literals  = "#8fbf9f",
+  numbers  = "#d99e8f",
   hints     = "#5a9b9f",
   types     = "#9a8dbb",
-  operators = "#b28fb8",
-  constants = "#d99e8f",
+  operators = "#e499e6",
+  constants = "#e16ba8",
 }
 
 function M.setup()
@@ -110,7 +111,7 @@ function M.setup()
   vim.api.nvim_set_hl(0, "@boolean", { fg = M.colors.constants })
   vim.api.nvim_set_hl(0, "@boolean.true", { link = "@boolean" })
   vim.api.nvim_set_hl(0, "@boolean.false", { link = "@boolean" })
-  vim.api.nvim_set_hl(0, "Number", { fg = M.colors.constants })
+  vim.api.nvim_set_hl(0, "Number", { fg = M.colors.numbers })
   vim.api.nvim_set_hl(0, "Float", { link = "Number" })
   vim.api.nvim_set_hl(0, "@number", { link = "Number" })
   vim.api.nvim_set_hl(0, "@float", { link = "Number" })
@@ -163,12 +164,16 @@ function M.setup()
   vim.api.nvim_set_hl(0, "@lsp.typemod.class.readonly.java", { link = "@type" })
   vim.api.nvim_set_hl(0, "@lsp.typemod.interface.public.java", { link = "@type" })
   vim.api.nvim_set_hl(0, "@lsp.mod.public.java", { link = "@type" })
-  -- Tsx
+  -- Typescript, tsx, React
+  vim.api.nvim_set_hl(0, "@keyword.conditional.ternary.tsx", { link = "Operator" })
+  vim.api.nvim_set_hl(0, "@lsp.mod.readonly.typescriptreact", { link = "@variable" })
+  vim.api.nvim_set_hl(0, "@lsp.typemod.variable.readonly.typescriptreact", { link = "@variable" })
   vim.api.nvim_set_hl(0, "@variable.tsx", { link = "@variable" })
   vim.api.nvim_set_hl(0, "@type.tsx", { link = "@variable" })
   vim.api.nvim_set_hl(0, "@type.builtin.tsx", { fg = M.colors.types })
   vim.api.nvim_set_hl(0, "@tag.tsx", { link = "@variable" })
   vim.api.nvim_set_hl(0, "@tag.attribute.tsx", { link = "@variable" })
+  vim.api.nvim_set_hl(0, "@lsp.typemod.property.defaultLibrary.typescriptreact", { fg = M.colors.types })
   -- Python
   vim.api.nvim_set_hl(0, "@variable.python", { link = "@variable" })
   vim.api.nvim_set_hl(0, "@function.call.python", { link = "@variable" })
