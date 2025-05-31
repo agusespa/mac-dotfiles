@@ -17,6 +17,10 @@ export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/corretto-21.0.6/Content
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export TMUXINATOR_CONFIG="$HOME/Code/tmux-projects"
 
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
 if [ -n "$TMUX" ]; then
   alias nvim='TERM=tmux-256color nvim'
 fi

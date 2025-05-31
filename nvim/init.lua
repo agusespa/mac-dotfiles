@@ -2,6 +2,7 @@ require("conf.plugins")
 require("conf.mappings")
 require("conf.utils")
 require("conf.lsp")
+require("conf.snippets")
 require("conf.statusline")
 
 vim.opt.termguicolors = true

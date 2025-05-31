@@ -17,7 +17,7 @@ _G.statusline = function()
   end
 
   local full_path = vim.fn.expand('%:p:~')
-  local filepath = "%#StatusLine#" .. simple_truncate(full_path, 80) .. "%*"
+  local filepath = "%#StatusLine#" .. simple_truncate(full_path, 50) .. "%*"
   local modified = "%#StatusLineModified#%m%*"
   local filetype = "%y"
   local linecol = "%(%l:%c%)"

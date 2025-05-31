@@ -174,6 +174,9 @@ function M.setup()
   vim.api.nvim_set_hl(0, "@tag.tsx", { link = "@variable" })
   vim.api.nvim_set_hl(0, "@tag.attribute.tsx", { link = "@variable" })
   vim.api.nvim_set_hl(0, "@lsp.typemod.property.defaultLibrary.typescriptreact", { fg = M.colors.types })
+  vim.api.nvim_set_hl(0, "@lsp.typemod.readonly.typescript", { link = "@variable" })
+  vim.api.nvim_set_hl(0, "@lsp.mod.readonly.typescript", { link = "@variable" })
+
   -- Python
   vim.api.nvim_set_hl(0, "@variable.python", { link = "@variable" })
   vim.api.nvim_set_hl(0, "@function.call.python", { link = "@variable" })
