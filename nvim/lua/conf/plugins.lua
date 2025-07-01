@@ -21,6 +21,7 @@ require('packer').startup(function(use)
         { "rafamadriz/friendly-snippets" },
         { 'saadparwaiz1/cmp_luasnip' },
     }
+    use 'mfussenegger/nvim-jdtls'
 
     -- General plugins
     use "nvim-lua/plenary.nvim"

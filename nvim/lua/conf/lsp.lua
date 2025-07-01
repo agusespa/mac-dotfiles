@@ -44,7 +44,6 @@ lspconfig.ts_ls.setup({})
 lspconfig.gopls.setup({})
 lspconfig.golangci_lint_ls.setup({})
 lspconfig.buf_ls.setup({})
-lspconfig.jdtls.setup({})
 lspconfig.kotlin_language_server.setup({})
 lspconfig.angularls.setup({})
 lspconfig.svelte.setup({})
@@ -138,3 +137,9 @@ lspconfig.shopify_theme_ls.setup({
   filetypes = { 'liquid' },
   root_dir = util.root_pattern(unpack(root_files))
 })
+
+local config = {
+  cmd = { '/Users/agusespa/.local/share/nvim/mason/bin/jdtls' },
+  root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
+}
+require('jdtls').start_or_attach(config)
