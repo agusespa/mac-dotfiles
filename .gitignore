@@ -15,6 +15,7 @@ stetic/
 filezilla/
 iterm2/AppSupport
 iterm2/sockets
+.android/
 
 nvim/autoload
 

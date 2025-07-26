@@ -36,9 +36,9 @@ lspconfig.lua_ls.setup({
   }
 })
 lspconfig.yamlls.setup({})
-lspconfig.clangd.setup({
-  filetypes = { "c", "cpp" },
-})
+-- lspconfig.clangd.setup({
+--   filetypes = { "c", "cpp" },
+-- })
 lspconfig.omnisharp.setup({})
 lspconfig.ts_ls.setup({})
 lspconfig.gopls.setup({})
@@ -140,6 +140,6 @@ lspconfig.shopify_theme_ls.setup({
 
 local config = {
   cmd = { '/Users/agusespa/.local/share/nvim/mason/bin/jdtls' },
-  root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
+  root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', 'mvnw' }, { upward = true })[1]),
 }
 require('jdtls').start_or_attach(config)
