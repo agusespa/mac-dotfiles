@@ -18,7 +18,7 @@ lspconfig.stylelint_lsp.setup({
 })
 lspconfig.cssls.setup({})
 lspconfig.jsonls.setup({})
-lspconfig.pyright.setup({})
+-- lspconfig.pyright.setup({})
 lspconfig.html.setup({})
 lspconfig.lua_ls.setup({
   settings = {
@@ -39,35 +39,35 @@ lspconfig.yamlls.setup({})
 -- lspconfig.clangd.setup({
 --   filetypes = { "c", "cpp" },
 -- })
-lspconfig.omnisharp.setup({})
-lspconfig.ts_ls.setup({})
+-- lspconfig.omnisharp.setup({})
+-- lspconfig.ts_ls.setup({})
 -- lspconfig.gopls.setup({})
 -- lspconfig.golangci_lint_ls.setup({})
-lspconfig.buf_ls.setup({})
+-- lspconfig.buf_ls.setup({})
 lspconfig.kotlin_language_server.setup({})
-lspconfig.angularls.setup({})
-lspconfig.svelte.setup({})
+-- lspconfig.angularls.setup({})
+-- lspconfig.svelte.setup({})
 lspconfig.bashls.setup({
   filetypes = { "sh" },
 })
-lspconfig.sqlls.setup({})
-lspconfig.htmx.setup({})
-lspconfig.templ.setup({})
-lspconfig.lemminx.setup({
-  settings = {
-    xml = {
-      format = {
-        enabled = false,
-        splitAttributes = false,
-        joinCDATALines = false,
-        joinCommentLines = false,
-        formatComments = true,
-        joinContentLines = false,
-        spaceBeforeEmptyCloseTag = false
-      }
-    }
-  }
-})
+-- lspconfig.sqlls.setup({})
+-- lspconfig.htmx.setup({})
+-- lspconfig.templ.setup({})
+-- lspconfig.lemminx.setup({
+--   settings = {
+--     xml = {
+--       format = {
+--         enabled = false,
+--         splitAttributes = false,
+--         joinCDATALines = false,
+--         joinCommentLines = false,
+--         formatComments = true,
+--         joinContentLines = false,
+--         spaceBeforeEmptyCloseTag = false
+--       }
+--     }
+--   }
+-- })
 
 vim.diagnostic.config({
   virtual_text = true,
@@ -140,6 +140,6 @@ lspconfig.shopify_theme_ls.setup({
 
 local config = {
   cmd = { '/Users/agusespa/.local/share/nvim/mason/bin/jdtls' },
-  root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', 'mvnw' }, { upward = true })[1]),
+  root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', 'mvnw', 'pom.xml' }, { upward = true })[1]),
 }
 require('jdtls').start_or_attach(config)
