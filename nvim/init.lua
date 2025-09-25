@@ -68,4 +68,14 @@ vim.opt.spelloptions = "camel"
 vim.o.completeopt = 'menuone,noselect'
 
 vim.o.background = "dark"
-require('conf.colorscheme').setup()
+require("catppuccin").setup({
+    flavour = "mocha",
+    color_overrides = {
+        mocha = {
+            base = "#000000",
+        },
+    },
+    transparent_background = false,
+})
+vim.cmd.colorscheme("catppuccin-mocha")
+-- require('conf.colorscheme').setup()

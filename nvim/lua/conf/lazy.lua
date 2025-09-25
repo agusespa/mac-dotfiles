@@ -28,6 +28,7 @@ require("lazy").setup({
         { 'neovim/nvim-lspconfig' },
         { 'williamboman/mason.nvim' },
         { 'williamboman/mason-lspconfig.nvim' },
+        { 'mfussenegger/nvim-jdtls' },
         -- Autocompletion and Snippets
         { 'hrsh7th/nvim-cmp' },
         { 'hrsh7th/cmp-buffer' },
@@ -40,6 +41,7 @@ require("lazy").setup({
         -- General plugins
         { 'nvim-lua/plenary.nvim' },
         { 'nvim-tree/nvim-web-devicons' },
+        { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
         -- Utility plugins
         {
             'nvim-treesitter/nvim-treesitter',
@@ -69,7 +71,6 @@ require("lazy").setup({
             branch = "harpoon2",
         },
         { 'fatih/vim-go' },
-        { 'mfussenegger/nvim-jdtls' },
     },
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
