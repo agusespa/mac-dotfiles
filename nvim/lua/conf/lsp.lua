@@ -140,7 +140,7 @@ lspconfig.shopify_theme_ls.setup({
 
 -- JAVA config
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = vim.fn.expand("~/.local/share/eclipse/") .. project_name
+local workspace_dir = "/Users/agusespa/.local/share/eclipse/" .. project_name
 
 local root_markers = { 'pom.xml', 'gradlew', 'mvnw' }
 local root_file = vim.fs.find(root_markers, { upward = true })[1]
