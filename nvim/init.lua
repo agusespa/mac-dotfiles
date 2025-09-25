@@ -68,6 +68,7 @@ vim.opt.spelloptions = "camel"
 vim.o.completeopt = 'menuone,noselect'
 
 vim.o.background = "dark"
+
 require("catppuccin").setup({
     flavour = "mocha",
     color_overrides = {
@@ -76,6 +77,14 @@ require("catppuccin").setup({
         },
     },
     transparent_background = false,
+    custom_highlights = function(colors)
+        return {
+            DiagnosticUnderlineError = { undercurl = true, sp = colors.red },
+            DiagnosticUnderlineWarn  = { undercurl = true, sp = colors.yellow },
+            DiagnosticUnderlineInfo  = { undercurl = true, sp = colors.blue },
+            DiagnosticUnderlineHint  = { undercurl = true, sp = colors.teal },
+        }
+    end
 })
 vim.cmd.colorscheme("catppuccin-mocha")
 -- require('conf.colorscheme').setup()
