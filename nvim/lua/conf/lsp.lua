@@ -139,21 +139,28 @@ lspconfig.shopify_theme_ls.setup({
 })
 
 -- JAVA config
-local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = "/Users/agusespa/.local/share/eclipse/" .. project_name
-
-local root_markers = { 'pom.xml', 'gradlew', 'mvnw' }
-local root_file = vim.fs.find(root_markers, { upward = true })[1]
-local root_dir = root_file and vim.fs.dirname(root_file) or vim.fn.getcwd()
-
-
-local config = {
-  cmd = {
-    '/Users/agusespa/.local/share/nvim/mason/bin/jdtls',
-    '-data', workspace_dir,
-  },
-  root_dir = root_dir,
-}
-
-require('jdtls').start_or_attach(config)
-
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "java",
+  callback = function()
+    local root_markers = { 'pom.xml', 'gradlew', 'mvnw' }
+    local root_file = vim.fs.find(root_markers, { upward = true })[1]
+    
+    if not root_file then
+      return -- Not in a Java project, don't start JDTLS
+    end
+    
+    local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+    local workspace_dir = "/Users/agusespa/.local/share/eclipse/" .. project_name
+    local root_dir = vim.fs.dirname(root_file)
+    
+    local config = {
+      cmd = {
+        '/Users/agusespa/.local/share/nvim/mason/bin/jdtls',
+        '-data', workspace_dir,
+      },
+      root_dir = root_dir,
+    }
+    
+    require('jdtls').start_or_attach(config)
+  end,
+})
