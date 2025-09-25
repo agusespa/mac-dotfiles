@@ -1,4 +1,5 @@
-require("conf.plugins")
+require("conf.lazy")
+
 require("conf.mappings")
 require("conf.utils")
 require("conf.lsp")

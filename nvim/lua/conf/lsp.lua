@@ -1,7 +1,7 @@
 require('mason').setup()
 require('mason-lspconfig').setup()
 
-local lspconfig = require('lspconfig')
+local lspconfig = require("lspconfig")
 local lsp_defaults = lspconfig.util.default_config
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -138,8 +138,22 @@ lspconfig.shopify_theme_ls.setup({
   root_dir = util.root_pattern(unpack(root_files))
 })
 
+-- JAVA config
+local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+local workspace_dir = vim.fn.expand("~/.local/share/eclipse/") .. project_name
+
+local root_markers = { 'pom.xml', 'gradlew', 'mvnw' }
+local root_file = vim.fs.find(root_markers, { upward = true })[1]
+local root_dir = root_file and vim.fs.dirname(root_file) or vim.fn.getcwd()
+
+
 local config = {
-  cmd = { '/Users/agusespa/.local/share/nvim/mason/bin/jdtls' },
-  root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', 'mvnw', 'pom.xml' }, { upward = true })[1]),
+  cmd = {
+    '/Users/agusespa/.local/share/nvim/mason/bin/jdtls',
+    '-data', workspace_dir,
+  },
+  root_dir = root_dir,
 }
+
 require('jdtls').start_or_attach(config)
+
