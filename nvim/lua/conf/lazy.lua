@@ -27,7 +27,6 @@ require("lazy").setup({
         -- LSP plugins
         { 'neovim/nvim-lspconfig' },
         { 'williamboman/mason.nvim' },
-        { 'williamboman/mason-lspconfig.nvim' },
         { 'mfussenegger/nvim-jdtls' },
         -- Autocompletion and Snippets
         { 'hrsh7th/nvim-cmp' },
@@ -41,7 +40,7 @@ require("lazy").setup({
         -- General plugins
         { 'nvim-lua/plenary.nvim' },
         { 'nvim-tree/nvim-web-devicons' },
-        { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+        { "catppuccin/nvim",             name = "catppuccin", priority = 1000 },
         -- Utility plugins
         {
             'nvim-treesitter/nvim-treesitter',

@@ -1,5 +1,4 @@
 require('mason').setup()
-require('mason-lspconfig').setup()
 
 local lspconfig = require("lspconfig")
 local lsp_defaults = lspconfig.util.default_config
@@ -18,7 +17,7 @@ lspconfig.stylelint_lsp.setup({
 })
 lspconfig.cssls.setup({})
 lspconfig.jsonls.setup({})
--- lspconfig.pyright.setup({})
+lspconfig.pyright.setup({})
 lspconfig.html.setup({})
 lspconfig.lua_ls.setup({
   settings = {
@@ -36,13 +35,13 @@ lspconfig.lua_ls.setup({
   }
 })
 lspconfig.yamlls.setup({})
--- lspconfig.clangd.setup({
---   filetypes = { "c", "cpp" },
--- })
+lspconfig.clangd.setup({
+  filetypes = { "c", "cpp" },
+})
 -- lspconfig.omnisharp.setup({})
--- lspconfig.ts_ls.setup({})
--- lspconfig.gopls.setup({})
--- lspconfig.golangci_lint_ls.setup({})
+lspconfig.ts_ls.setup({})
+lspconfig.gopls.setup({})
+lspconfig.golangci_lint_ls.setup({})
 -- lspconfig.buf_ls.setup({})
 -- lspconfig.kotlin_language_server.setup({})
 -- lspconfig.angularls.setup({})
@@ -50,24 +49,24 @@ lspconfig.yamlls.setup({})
 lspconfig.bashls.setup({
   filetypes = { "sh" },
 })
--- lspconfig.sqlls.setup({})
+lspconfig.sqlls.setup({})
 -- lspconfig.htmx.setup({})
 -- lspconfig.templ.setup({})
--- lspconfig.lemminx.setup({
---   settings = {
---     xml = {
---       format = {
---         enabled = false,
---         splitAttributes = false,
---         joinCDATALines = false,
---         joinCommentLines = false,
---         formatComments = true,
---         joinContentLines = false,
---         spaceBeforeEmptyCloseTag = false
---       }
---     }
---   }
--- })
+lspconfig.lemminx.setup({
+  settings = {
+    xml = {
+      format = {
+        enabled = false,
+        splitAttributes = false,
+        joinCDATALines = false,
+        joinCommentLines = false,
+        formatComments = true,
+        joinContentLines = false,
+        spaceBeforeEmptyCloseTag = false
+      }
+    }
+  }
+})
 
 vim.diagnostic.config({
   virtual_text = true,
@@ -127,15 +126,15 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function()
     local root_markers = { 'pom.xml', 'gradlew', 'mvnw' }
     local root_file = vim.fs.find(root_markers, { upward = true })[1]
-    
+
     if not root_file then
       return -- Not in a Java project, don't start JDTLS
     end
-    
-    local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-    local workspace_dir = "/Users/agusespa/.local/share/eclipse/" .. project_name
+
     local root_dir = vim.fs.dirname(root_file)
-    
+    local project_name = vim.fn.fnamemodify(root_dir, ':t')
+    local workspace_dir = "/Users/agusespa/.local/share/eclipse/" .. project_name
+
     local config = {
       cmd = {
         '/Users/agusespa/.local/share/nvim/mason/bin/jdtls',
@@ -143,7 +142,7 @@ vim.api.nvim_create_autocmd("FileType", {
       },
       root_dir = root_dir,
     }
-    
+
     require('jdtls').start_or_attach(config)
   end,
 })
